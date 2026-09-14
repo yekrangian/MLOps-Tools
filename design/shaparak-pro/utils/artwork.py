@@ -5,6 +5,8 @@ and the QR code.
 
 from __future__ import annotations
 
+import re
+
 import qrcode
 
 from . import theme
@@ -135,6 +137,52 @@ _TOWEL_BODY_TOP = "M0,-6.2 C2.7,-3.2 2.7,0.6 0,3.2 C-2.7,0.6 -2.7,-3.2 0,-6.2 Z"
 _TOWEL_BODY_BOTTOM = "M0,4.2 C3.1,8.4 3.1,16.4 0,22.4 C-3.1,16.4 -3.1,8.4 0,4.2 Z"
 
 
+def _flatten(d: str, steps: int = 28) -> list[tuple[float, float]]:
+    """Flatten a simple ``M``/``C``/``Z`` path into a polygon.
+
+    Only the subset used by the butterfly shapes is supported, which keeps the
+    towel texture free of clipping paths - legacy Illustrator files and some
+    RIPs handle plain geometry far more predictably than clip groups.
+    """
+    numbers = [float(n) for n in re.findall(r"-?\d+(?:\.\d+)?", d)]
+    commands = re.findall(r"[MCLZmclz]", d)
+    points: list[tuple[float, float]] = []
+    cursor = 0
+    current = (0.0, 0.0)
+    for command in commands:
+        if command in "Mm" or command in "Ll":
+            current = (numbers[cursor], numbers[cursor + 1])
+            cursor += 2
+            points.append(current)
+        elif command in "Cc":
+            p1 = (numbers[cursor], numbers[cursor + 1])
+            p2 = (numbers[cursor + 2], numbers[cursor + 3])
+            p3 = (numbers[cursor + 4], numbers[cursor + 5])
+            cursor += 6
+            p0 = current
+            for step in range(1, steps + 1):
+                t = step / steps
+                u = 1 - t
+                points.append(
+                    (
+                        u**3 * p0[0] + 3 * u * u * t * p1[0] + 3 * u * t * t * p2[0] + t**3 * p3[0],
+                        u**3 * p0[1] + 3 * u * u * t * p1[1] + 3 * u * t * t * p2[1] + t**3 * p3[1],
+                    )
+                )
+            current = p3
+    return points
+
+
+def _scanline(polygon: list[tuple[float, float]], y: float) -> list[tuple[float, float]]:
+    """Spans where the horizontal line at ``y`` runs inside ``polygon``."""
+    crossings: list[float] = []
+    for (x1, y1), (x2, y2) in zip(polygon, polygon[1:] + polygon[:1], strict=True):
+        if (y1 <= y < y2) or (y2 <= y < y1):
+            crossings.append(x1 + (y - y1) / (y2 - y1) * (x2 - x1))
+    crossings.sort()
+    return list(zip(crossings[0::2], crossings[1::2], strict=False))
+
+
 def towel_butterfly(
     cx: float,
     cy: float,
@@ -150,25 +198,33 @@ def towel_butterfly(
 
     wings = group(f"{uid}-wings", fill=fill, stroke=outline, stroke_width=stroke / scale,
                   stroke_linejoin="round")
-    clip = el("clipPath", id=f"{uid}-clip")
+    polygons: list[list[tuple[float, float]]] = []
     for sign in (1, -1):
         transform = None if sign == 1 else "scale(-1 1)"
-        for name, d in (("upper", _TOWEL_UPPER), ("lower", _TOWEL_LOWER)):
+        for d in (_TOWEL_UPPER, _TOWEL_LOWER):
             wings.add(path(d, transform=transform) if transform else path(d))
-            clip.add(path(d, transform=transform) if transform else path(d))
+            polygons.append([(sign * px, py) for px, py in _flatten(d)])
 
-    texture = group(f"{uid}-texture", clip_path=f"url(#{uid}-clip)", opacity=0.5)
+    # the woven look of the towel: horizontal ridges trimmed to each wing
+    texture = group(f"{uid}-texture", opacity=0.5)
+    inset, spacing = 1.1, 2.1
     y = -26.0
-    while y < 26.0:
-        texture.add(
-            path(
-                f"M-50,{fmt(y)} C-25,{fmt(y - 0.9)} 25,{fmt(y + 0.9)} 50,{fmt(y)}",
-                fill="none",
-                stroke=theme.TOWEL_SHADE,
-                stroke_width=0.55 / scale * 0.8,
-            )
-        )
-        y += 2.1
+    while y < 28.0:
+        for polygon in polygons:
+            for x1, x2 in _scanline(polygon, y):
+                if x2 - x1 > 2 * inset + 1.0:
+                    texture.add(
+                        line(
+                            x1 + inset,
+                            y,
+                            x2 - inset,
+                            y,
+                            stroke=theme.TOWEL_SHADE,
+                            stroke_width=0.44 / scale,
+                            stroke_linecap="round",
+                        )
+                    )
+        y += spacing
 
     body = group(
         f"{uid}-body",
@@ -195,7 +251,7 @@ def towel_butterfly(
             circle(sign * 8.6, -19.9, 1.5, fill=outline, stroke="none"),
         )
 
-    node.add(el("defs", clip), wings, texture, body, antennae)
+    node.add(wings, texture, body, antennae)
     return node
 
 
