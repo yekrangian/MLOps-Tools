@@ -8,7 +8,7 @@ the files stay diffable in git.
 
 from __future__ import annotations
 
-from typing import Iterable
+from collections.abc import Iterable
 from xml.sax.saxutils import escape
 
 Number = float | int
@@ -23,19 +23,18 @@ def fmt(value: Number) -> str:
 
 
 def _attr_name(name: str) -> str:
-    if name.endswith("_"):
-        name = name[:-1]
+    name = name.removesuffix("_")
     return name.replace("__", ":").replace("_", "-")
 
 
 class Node:
-    def __init__(self, tag: str, *children: "Node | str", **attrs):
+    def __init__(self, tag: str, *children: Node | str, **attrs):
         self.tag = tag
         self.attrs: dict[str, str] = {}
         self.children: list[Node | str] = [c for c in children if c is not None]
         self.set(**attrs)
 
-    def set(self, **attrs) -> "Node":
+    def set(self, **attrs) -> Node:
         for key, value in attrs.items():
             if value is None:
                 continue
@@ -44,7 +43,7 @@ class Node:
             self.attrs[_attr_name(key)] = str(value)
         return self
 
-    def add(self, *children: "Node | str | Iterable[Node]") -> "Node":
+    def add(self, *children: Node | str | Iterable[Node]) -> Node:
         for child in children:
             if child is None:
                 continue
@@ -105,11 +104,11 @@ class Document:
         self.defs = Node("defs")
         self.root_children: list[Node] = []
 
-    def add(self, *nodes: Node) -> "Document":
+    def add(self, *nodes: Node) -> Document:
         self.root_children.extend(n for n in nodes if n is not None)
         return self
 
-    def define(self, *nodes: Node) -> "Document":
+    def define(self, *nodes: Node) -> Document:
         self.defs.add(*nodes)
         return self
 
