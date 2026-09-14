@@ -18,8 +18,8 @@ from pathlib import Path
 
 import cairosvg
 
+from utils import ai_export, panels, theme
 from utils import artwork as art
-from utils import panels, theme
 from utils import typography as tp
 from utils.svgdoc import Document, Node, el, group, rect
 
@@ -29,7 +29,9 @@ OUTPUT = ROOT / "output"
 PANEL_BUILDERS = {"front": panels.front_panel, "back": panels.back_panel}
 
 
-def panel_document(colourway: theme.ColourWay, side: str, outline: bool) -> Document:
+def panel_document(
+    colourway: theme.ColourWay, side: str, outline: bool
+) -> tuple[Document, Node]:
     mode = "outlined" if outline else "live text"
     doc = Document(
         theme.PANEL_W,
@@ -38,8 +40,9 @@ def panel_document(colourway: theme.ColourWay, side: str, outline: bool) -> Docu
         desc=f"Flow pack {side} panel, {theme.PANEL_W:.0f} x {theme.PANEL_H:.0f} mm, {mode}.",
     )
     uid = f"{side}-{colourway.key}-{'o' if outline else 'l'}"
-    doc.add(PANEL_BUILDERS[side](colourway, outline=outline, mockup=False, uid=uid))
-    return doc
+    panel = PANEL_BUILDERS[side](colourway, outline=outline, mockup=False, uid=uid)
+    doc.add(panel)
+    return doc, panel
 
 
 def _pouch(colourway: theme.ColourWay, side: str, x: float, y: float, index: int) -> Node:
@@ -120,6 +123,26 @@ def logo_document() -> Document:
     return doc
 
 
+def layer_nodes(panel: Node) -> list[tuple[str, Node]]:
+    """The named layer groups of a panel, in stacking order."""
+    return [
+        (child.attrs.get("id", f"layer-{index}"), child)
+        for index, child in enumerate(panel.children)
+        if isinstance(child, Node) and child.tag == "g"
+    ]
+
+
+def write_ai(doc: Document, panel: Node, destination: Path, title: str) -> Path:
+    """Write a layered legacy Illustrator file plus an EPS fallback."""
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    layers = layer_nodes(panel)
+    destination.write_text(ai_export.layered_ai(doc, layers, title), encoding="utf-8")
+    eps = OUTPUT / "eps" / f"{destination.stem}.eps"
+    eps.parent.mkdir(parents=True, exist_ok=True)
+    eps.write_text(ai_export.layered_ai(doc, layers, title, eps=True), encoding="utf-8")
+    return eps
+
+
 def write(doc: Document, destination: Path, png_dpi: int | None = None,
           pdf: Path | None = None) -> None:
     destination.parent.mkdir(parents=True, exist_ok=True)
@@ -128,10 +151,6 @@ def write(doc: Document, destination: Path, png_dpi: int | None = None,
     if pdf is not None:
         pdf.parent.mkdir(parents=True, exist_ok=True)
         cairosvg.svg2pdf(bytestring=svg_bytes, write_to=str(pdf))
-        # Illustrator reads PDF natively, so the same stream doubles as an .ai
-        ai = OUTPUT / "ai" / f"{pdf.stem}.ai"
-        ai.parent.mkdir(parents=True, exist_ok=True)
-        ai.write_bytes(pdf.read_bytes())
     if png_dpi:
         png = OUTPUT / "preview" / f"{destination.stem}.png"
         png.parent.mkdir(parents=True, exist_ok=True)
@@ -144,14 +163,19 @@ def build(png_dpi: int = 150) -> list[Path]:
     for colourway in theme.COLOURWAYS:
         for side in PANEL_BUILDERS:
             stem = f"shaparak-pro-{colourway.key}-{side}"
+            doc, panel = panel_document(colourway, side, outline=True)
             outlined = OUTPUT / "svg-outlined" / f"{stem}.svg"
-            write(panel_document(colourway, side, outline=True), outlined, png_dpi=png_dpi,
-                  pdf=OUTPUT / "pdf" / f"{stem}.pdf")
+            write(doc, outlined, png_dpi=png_dpi, pdf=OUTPUT / "pdf" / f"{stem}.pdf")
             written.append(outlined)
 
-            live = OUTPUT / "svg-live-text" / f"{stem}-live-text.svg"
-            write(panel_document(colourway, side, outline=False), live)
-            written.append(live)
+            ai = OUTPUT / "ai" / f"{stem}.ai"
+            write_ai(doc, panel, ai, f"Shaparak Pro {colourway.name_en} {side}")
+            written.append(ai)
+
+            live, _ = panel_document(colourway, side, outline=False)
+            live_path = OUTPUT / "svg-live-text" / f"{stem}-live-text.svg"
+            write(live, live_path)
+            written.append(live_path)
 
     sheet = OUTPUT / "shaparak-pro-presentation-sheet.svg"
     write(sheet_document(), sheet, png_dpi=110, pdf=OUTPUT / "pdf" / sheet.with_suffix(".pdf").name)

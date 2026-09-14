@@ -14,18 +14,26 @@ type – is vector and editable in Illustrator; no raster images are embedded.
 
 | مسیر / path | چیست / what it is |
 | --- | --- |
-| `output/ai/*.ai` | فایل‌های PDF-compatible که ایلاستریتور مستقیم باز می‌کند (متن‌ها outline شده) |
+| `output/ai/*.ai` | **فایل لایه‌باز ایلاستریتور** – چهار پنل با لایه‌های نام‌دار (متن‌ها outline شده) |
+| `output/eps/*.eps` | همان محتوا با هدر EPS؛ اگر ایلاستریتور شما `.ai` قدیمی را باز نکرد از این استفاده کنید |
 | `output/svg-outlined/*.svg` | همان طرح‌ها به صورت SVG، متن تبدیل به منحنی – مطمئن‌ترین گزینه برای چاپ |
 | `output/svg-live-text/*.svg` | نسخه‌ی متن زنده و قابل تایپ مجدد (نیاز به فونت‌های پوشه‌ی `fonts/`) |
-| `output/pdf/*.pdf` | همان محتوای `.ai`، برای پیش‌نمایش و ارسال به چاپخانه |
+| `output/pdf/*.pdf` | خروجی PDF برای پیش‌نمایش و ارسال به چاپخانه |
 | `output/preview/*.png` | پیش‌نمایش PNG |
 | `output/shaparak-pro-presentation-sheet.svg` | شیت ارائه، مشابه چیدمان تصویر اولیه (۲ نسخه × رو و پشت) |
 | `output/shaparak-pro-logo.svg` | لوگوی پروانه + لوگوتایپ به صورت جدا |
 
-`.ai` files here are PDF-format Illustrator files: Illustrator opens them
-directly and every object stays editable. If your Illustrator is older than CS6
-or refuses the extension, open the matching `output/pdf/*.pdf` or drag in the
-SVG instead – the content is identical.
+فایل‌های `.ai` با فرمت **Illustrator 8** نوشته شده‌اند؛ این تنها فرمت مستند AI است که
+رکورد لایه دارد، بنابراین وقتی فایل را در ایلاستریتور باز کنید پنل Layers با همان
+نام‌های زیر پر می‌شود. ممکن است ایلاستریتور پیام «فایل با نسخه‌ی قدیمی ساخته شده»
+بدهد؛ کافی است بعد از باز شدن یک بار `File ▸ Save As` بزنید تا به فرمت امروزی
+تبدیل شود. اگر نسخه‌ی شما فایل را باز نکرد، فایل هم‌نام در `output/eps/` را باز کنید –
+محتوا دقیقاً یکسان است.
+
+The `.ai` files are written in the documented Illustrator 8 (PostScript)
+format, the only AI flavour that carries real layer records, so Illustrator
+rebuilds the Layers panel on open. A plain PDF renamed to `.ai` would arrive as
+one flat layer instead, which is why that route is not used here.
 
 ### متن فارسی و ایلاستریتور / Persian text in Illustrator
 
@@ -39,8 +47,7 @@ SVG instead – the content is identical.
 
 ## ساختار لایه‌ها / Layer structure
 
-هر پنل با گروه‌های نام‌گذاری‌شده ساخته شده که ایلاستریتور آن‌ها را به صورت لایه
-نشان می‌دهد:
+پنل رو (۱۰ لایه):
 
 ```
 01-BACKGROUND          زمینه و موج رنگی
@@ -53,13 +60,24 @@ SVG instead – the content is identical.
 08-EXTRA-SOFT-CLAIM    ادعای EXTRA SOFT / NATURAL FIBER
 09-USAGE-STRIP         نوار کاربردها
 10-SIZE-OPTIONS        جدول سایزها
-ZZ-MOCKUP-SHADING      سایه/براقی فیلم – فقط در شیت ارائه
-ZZ-GUIDES-do-not-print راهنمای برش، ناحیه‌ی امن و بلید (مخفی)
 ```
 
-لایه‌ی `ZZ-GUIDES-do-not-print` به صورت پیش‌فرض مخفی است: کادر بنفش = خط برش،
-آبی = ناحیه‌ی امن (۶ میلی‌متر)، نارنجی = بلید پیشنهادی (۳ میلی‌متر). پیش از چاپ آن را
-حذف کنید.
+پنل پشت (۷ لایه):
+
+```
+01-BACKGROUND          زمینه و حاشیه‌ی رنگی
+02-TOP-SEAL            دوخت بالا
+03-BRAND-AND-FEATURES  لوگو، متن معرفی و فهرست ویژگی‌ها (انگلیسی و فارسی)
+04-FOLLOW-US           QR، اینستاگرام و وب‌سایت
+05-SUITABLE-FOR        فهرست کاربردها و بخش ۱۰۰٪ ویسکوز
+06-CERTIFICATION-MARKS نشان استاندارد، ISO و بازیافت
+07-BARCODE             بارکد EAN-13
+```
+
+در فایل‌های SVG دو لایه‌ی کمکی هم وجود دارد: `ZZ-MOCKUP-SHADING` (سایه و براقی فیلم،
+فقط در شیت ارائه) و `ZZ-GUIDES-do-not-print` که به‌صورت مخفی است و کادر برش (بنفش)،
+ناحیه‌ی امن ۶ میلی‌متری (آبی) و بلید ۳ میلی‌متری (نارنجی) را نشان می‌دهد. این لایه‌ی
+راهنما عمداً وارد فایل‌های `.ai` و `.eps` نشده تا به‌اشتباه چاپ نشود.
 
 ## مشخصات فنی / Specs
 
@@ -93,7 +111,7 @@ ZZ-GUIDES-do-not-print راهنمای برش، ناحیه‌ی امن و بلی�
 
 ```bash
 python -m venv .venv && source .venv/bin/activate   # ویندوز: .venv\Scripts\activate
-pip install cairosvg uharfbuzz fonttools qrcode
+pip install cairosvg uharfbuzz fonttools qrcode svgelements
 cd design/shaparak-pro
 python generate.py            # همه‌ی خروجی‌ها در output/ ساخته می‌شوند
 python generate.py --dpi 300  # پیش‌نمایش با کیفیت بالاتر
@@ -109,6 +127,7 @@ python generate.py --dpi 300  # پیش‌نمایش با کیفیت بالاتر
 | `icons.py` | کتابخانه‌ی آیکون‌های برداری |
 | `artwork.py` | پروانه، دوخت‌ها، بارکد EAN‑13، QR و نشان‌ها |
 | `panels.py` | چیدمان پنل رو و پشت |
+| `ai_export.py` | تبدیل هر لایه به فرمت لایه‌دار Illustrator 8 (و EPS) |
 
 برای تغییر متن‌ها فقط `theme.py` را ویرایش کنید؛ اندازه‌ی فونت‌ها خودکار با عرض ستون
 تطبیق داده می‌شود.

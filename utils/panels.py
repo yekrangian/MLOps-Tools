@@ -274,8 +274,8 @@ def back_panel(
     )
     panel.add(background)
     panel.add(_seal(uid, colourway, 0, theme.TOP_SEAL_H, "02-TOP-SEAL"))
-    panel.add(_back_left_column(colourway, outline, gold))
-    panel.add(_back_right_column(colourway, outline))
+    panel.add(*_back_left_column(colourway, outline, gold))
+    panel.add(*_back_right_column(colourway, outline))
 
     if mockup:
         panel.add(sheen)
@@ -283,7 +283,7 @@ def back_panel(
     return panel
 
 
-def _back_left_column(colourway: theme.ColourWay, outline: bool, gold: str) -> Node:
+def _back_left_column(colourway: theme.ColourWay, outline: bool, gold: str) -> list[Node]:
     layer = group("03-BRAND-AND-FEATURES")
     centre, left, right = 38.0, 10.0, 67.0
 
@@ -352,11 +352,10 @@ def _back_left_column(colourway: theme.ColourWay, outline: bool, gold: str) -> N
         tp.text(theme.WEBSITE, left + 15.6, 165.0,
                 tp.Style(size=3.0, weight="medium", fill=theme.INK_SOFT), outline),
     )
-    layer.add(follow)
-    return layer
+    return [layer, follow]
 
 
-def _back_right_column(colourway: theme.ColourWay, outline: bool) -> Node:
+def _back_right_column(colourway: theme.ColourWay, outline: bool) -> list[Node]:
     layer = group("05-SUITABLE-FOR")
     centre, left, right = 112.0, 84.0, 141.0
 
@@ -397,9 +396,8 @@ def _back_right_column(colourway: theme.ColourWay, outline: bool) -> Node:
     marks.add(art.iran_standard_mark(93.0, 142.4, 4.1, theme.NAVY_TEXT, outline))
     marks.add(art.iso_mark(111.0, 143.0, 4.0, theme.NAVY_TEXT, outline))
     marks.add(icons.icon("recycle", 130.0, 143.0, 10.6, theme.BLACK, stroke_width=1.9))
-    layer.add(marks)
 
-    layer.add(group("07-BARCODE").add(
+    barcode = group("07-BARCODE").add(
         art.ean13(theme.BARCODE_DIGITS, 100.0, 150.0, 40.0, 14.4, outline=outline)
-    ))
-    return layer
+    )
+    return [layer, marks, barcode]
