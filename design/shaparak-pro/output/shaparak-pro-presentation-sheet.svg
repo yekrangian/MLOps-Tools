@@ -42,7 +42,7 @@
         <g id="01-BACKGROUND" data-name="01-BACKGROUND">
           <rect x="0" y="0" width="150" height="170" fill="#FDFDFC"/>
           <path d="M0,118.31 C26.25,111.8 56.25,111.59 75,115.58 C93.75,119.78 123.75,120.2 150,114.53 L150,170 L0,170 Z" fill="#5BB2AD"/>
-          <path d="M0,116.71 C26.25,110.2 56.25,109.99 75,113.98 C93.75,118.18 123.75,118.6 150,112.93" fill="none" stroke="url(#sheet-0-gold)" stroke-width="1" stroke-linecap="round"/>
+          <path d="M0,117.76 C26.25,111.25 56.25,111.04 75,115.03 C93.75,119.23 123.75,119.65 150,113.98" fill="none" stroke="url(#sheet-0-gold)" stroke-width="1" stroke-linecap="round"/>
         </g>
         <g id="02-TOP-SEAL" data-name="02-TOP-SEAL">
           <rect x="0" y="0" width="150" height="16" fill="#5BB2AD"/>
@@ -644,7 +644,7 @@
         <g id="01-BACKGROUND" data-name="01-BACKGROUND">
           <rect x="0" y="0" width="150" height="170" fill="#FDFDFC"/>
           <path d="M0,118.31 C26.25,111.8 56.25,111.59 75,115.58 C93.75,119.78 123.75,120.2 150,114.53 L150,170 L0,170 Z" fill="#1F2C50"/>
-          <path d="M0,116.71 C26.25,110.2 56.25,109.99 75,113.98 C93.75,118.18 123.75,118.6 150,112.93" fill="none" stroke="url(#sheet-2-gold)" stroke-width="1" stroke-linecap="round"/>
+          <path d="M0,117.76 C26.25,111.25 56.25,111.04 75,115.03 C93.75,119.23 123.75,119.65 150,113.98" fill="none" stroke="url(#sheet-2-gold)" stroke-width="1" stroke-linecap="round"/>
         </g>
         <g id="02-TOP-SEAL" data-name="02-TOP-SEAL">
           <rect x="0" y="0" width="150" height="16" fill="#1F2C50"/>

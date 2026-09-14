@@ -16,7 +16,7 @@ up in the other.
 from __future__ import annotations
 
 from dataclasses import dataclass, replace
-from functools import lru_cache
+from functools import cache
 from pathlib import Path
 
 import uharfbuzz as hb
@@ -49,7 +49,7 @@ class Face:
         return {"regular": 400, "medium": 500, "semibold": 600, "bold": 700}[self.weight]
 
 
-@lru_cache(maxsize=None)
+@cache
 def face(script: str, weight: str) -> Face:
     table = theme.LATIN if script == "latin" else theme.PERSIAN
     family = theme.LATIN_FAMILY if script == "latin" else theme.PERSIAN_FAMILY
@@ -69,7 +69,7 @@ class Style:
     rtl: bool | None = None  # defaults to True for the Persian face
     opacity: float | None = None
 
-    def with_(self, **kwargs) -> "Style":
+    def with_(self, **kwargs) -> Style:
         return replace(self, **kwargs)
 
     @property

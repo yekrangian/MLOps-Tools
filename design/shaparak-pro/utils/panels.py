@@ -120,7 +120,7 @@ def front_panel(
     )
     background.add(
         path(
-            art.wave_path(theme.FRONT_WAVE_Y - 1.6, theme.FRONT_WAVE_AMP, W),
+            art.wave_path(theme.FRONT_WAVE_Y - 0.55, theme.FRONT_WAVE_AMP, W),
             fill="none",
             stroke=gold,
             stroke_width=1.0,

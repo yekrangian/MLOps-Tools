@@ -7,7 +7,8 @@ from __future__ import annotations
 
 import qrcode
 
-from . import theme, typography as tp
+from . import theme
+from . import typography as tp
 from .svgdoc import Node, circle, el, fmt, group, line, path, rect
 
 # --- pouch body ------------------------------------------------------------
@@ -279,7 +280,7 @@ def ean13(
     text_size = min(h * 0.22, unit * 7.2)
     bar_h = h - text_size * 1.25
     guard_extra = text_size * 0.62
-    guards = set(range(0, 3)) | set(range(45, 50)) | set(range(92, 95))
+    guards = set(range(3)) | set(range(45, 50)) | set(range(92, 95))
 
     node = group("barcode-ean13")
     node.add(rect(x - unit * 2, y - unit, w + unit * 11, h + unit * 2, fill=theme.WHITE))
