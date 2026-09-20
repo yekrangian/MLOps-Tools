@@ -136,7 +136,23 @@ def front_panel(
     panel.add(bottom)
     panel.add(group("04-HANG-SLOT").add(art.hang_slot(W / 2, theme.HANG_HOLE_CY, theme.PAPER)))
 
-    # badge
+    panel.add(viscose_badge(colourway, outline))
+    panel.add(front_lockup(colourway, outline, gold))
+    panel.add(group("07-TOWEL-BUTTERFLY").add(
+        art.towel_butterfly(W / 2, 113, 76, outline=gold, uid=uid)
+    ))
+    panel.add(extra_soft_claim(outline))
+    panel.add(usage_strip(colourway, outline))
+    panel.add(size_box(colourway, outline))
+
+    if mockup:
+        panel.add(sheen)
+    panel.add(_guides())
+    return panel
+
+
+def viscose_badge(colourway: theme.ColourWay, outline: bool) -> Node:
+    """The round 100% VISCOSE seal from the top left of the front."""
     badge = group("05-VISCOSE-BADGE")
     badge.add(circle(24.5, 36.5, 11.2, fill=colourway.badge))
     badge.add(icons.icon("leaf", 24.5, 32.2, 7.0, theme.WHITE, stroke_width=1.5))
@@ -147,9 +163,12 @@ def front_panel(
                 tp.Style(size=2.9, weight="medium", fill=theme.WHITE, anchor="middle",
                          tracking=0.22), outline),
     )
-    panel.add(badge)
+    return badge
 
-    # lock-up
+
+def front_lockup(colourway: theme.ColourWay, outline: bool, gold: str = theme.GOLD) -> Node:
+    """Butterfly, SHAPARAK, PRO and the three language titles."""
+    del colourway
     lockup = group("06-LOGO-AND-TITLES")
     lockup.add(art.butterfly_logo(W / 2, 34.5, 28, gold, stroke=1.0))
     lockup.add(
@@ -174,14 +193,11 @@ def front_panel(
                        tp.Style(size=4.8, script="persian", fill=theme.NAVY_TEXT,
                                 anchor="middle"), 92), outline),
     )
-    panel.add(lockup)
+    return lockup
 
-    # towel
-    towel = group("07-TOWEL-BUTTERFLY")
-    towel.add(art.towel_butterfly(W / 2, 113, 76, outline=gold, uid=uid))
-    panel.add(towel)
 
-    # right hand claim
+def extra_soft_claim(outline: bool) -> Node:
+    """Leaf icon over the EXTRA SOFT / NATURAL FIBER wording."""
     claim = group("08-EXTRA-SOFT-CLAIM")
     claim.add(icons.icon("leaf", 130.5, 97.6, 8.6, theme.NAVY_TEXT, stroke_width=1.3))
     claim.add(
@@ -192,18 +208,11 @@ def front_panel(
                 tp.Style(size=2.9, weight="semibold", fill=theme.NAVY_TEXT, anchor="middle",
                          tracking=0.24), outline),
     )
-    panel.add(claim)
-
-    panel.add(_front_usage_strip(colourway, outline))
-    panel.add(_front_size_box(colourway, outline))
-
-    if mockup:
-        panel.add(sheen)
-    panel.add(_guides())
-    return panel
+    return claim
 
 
-def _front_usage_strip(colourway: theme.ColourWay, outline: bool) -> Node:
+def usage_strip(colourway: theme.ColourWay, outline: bool) -> Node:
+    """Seven usage icons with their Persian labels, drawn in the knock-out colour."""
     layer = group("09-USAGE-STRIP")
     left, right = 17.0, 133.0
     step = (right - left) / (len(theme.USAGES) - 1)
@@ -216,7 +225,8 @@ def _front_usage_strip(colourway: theme.ColourWay, outline: bool) -> Node:
     return layer
 
 
-def _front_size_box(colourway: theme.ColourWay, outline: bool) -> Node:
+def size_box(colourway: theme.ColourWay, outline: bool) -> Node:
+    """Rounded size panel with its legend and the two size options."""
     layer = group("10-SIZE-OPTIONS")
     box_x, box_y, box_w, box_h = 20.0, 153.6, 110.0, 10.2
     layer.add(art.rounded_panel(box_x, box_y, box_w, box_h, colourway.on_primary, width=0.32,
@@ -283,121 +293,186 @@ def back_panel(
     return panel
 
 
-def _back_left_column(colourway: theme.ColourWay, outline: bool, gold: str) -> list[Node]:
-    layer = group("03-BRAND-AND-FEATURES")
-    centre, left, right = 38.0, 10.0, 67.0
+BACK_CENTRE, BACK_LEFT, BACK_RIGHT = 38.0, 10.0, 67.0
 
-    layer.add(art.butterfly_logo(centre, 28.0, 21, gold, stroke=0.8))
-    layer.add(
-        tp.text(theme.BRAND, centre, 41.0,
+
+def back_lockup(colourway: theme.ColourWay, outline: bool, gold: str = theme.GOLD) -> Node:
+    """Butterfly, wordmark, PRO and the English tagline, as used on the back."""
+    block = group("brand-lockup")
+    block.add(art.butterfly_logo(BACK_CENTRE, 28.0, 21, gold, stroke=0.8))
+    block.add(
+        tp.text(theme.BRAND, BACK_CENTRE, 41.0,
                 tp.Style(size=8.6, weight="bold", fill=theme.NAVY_TEXT, anchor="middle",
                          tracking=0.95), outline)
     )
-    layer.add(
+    block.add(
         art.heading_with_rules(
-            theme.SUB_BRAND, centre, 46.8, 17.0,
+            theme.SUB_BRAND, BACK_CENTRE, 46.8, 17.0,
             tp.Style(size=4.6, weight="medium", fill=theme.GOLD, anchor="middle", tracking=1.5),
             theme.GOLD, outline, gap=2.6)
     )
-    layer.add(
-        tp.text(theme.TITLE_EN, centre, 52.6,
+    block.add(
+        tp.text(theme.TITLE_EN, BACK_CENTRE, 52.6,
                 tp.fit(theme.TITLE_EN,
                        tp.Style(size=3.1, weight="semibold", fill=colourway.accent,
                                 anchor="middle", tracking=0.3), 57), outline)
     )
+    return block
 
-    body_style = tp.fit_lines(
+
+def back_paragraph(outline: bool) -> Node:
+    style = tp.fit_lines(
         theme.BACK_PARAGRAPH,
         tp.Style(size=3.0, weight="regular", fill=theme.INK_SOFT),
-        right - left,
+        BACK_RIGHT - BACK_LEFT,
     )
-    layer.add(tp.paragraph(theme.BACK_PARAGRAPH, left, 59.6, body_style, 4.3, outline))
+    return group("intro-paragraph").add(
+        tp.paragraph(theme.BACK_PARAGRAPH, BACK_LEFT, 59.6, style, 4.3, outline)
+    )
 
+
+def features_list(colourway: theme.ColourWay, outline: bool, persian: bool) -> Node:
+    """The FEATURES / ویژگی‌ها list with its gold-ruled heading."""
+    block = group("features-fa" if persian else "features-en")
+    top = 118.6 if persian else 81.0
+    title = theme.FEATURES_TITLE_FA if persian else theme.FEATURES_TITLE_EN
+    title_style = (
+        tp.Style(size=4.4, script="persian", weight="medium", fill=colourway.accent,
+                 anchor="middle")
+        if persian
+        else tp.Style(size=4.2, weight="semibold", fill=colourway.accent, anchor="middle",
+                      tracking=0.5)
+    )
+    block.add(
+        art.heading_with_rules(title, BACK_CENTRE, top, 28.5, title_style, theme.GOLD, outline)
+    )
+    row_style = (
+        tp.Style(size=3.2, script="persian", fill=theme.INK_SOFT, anchor="end")
+        if persian
+        else tp.Style(size=3.0, weight="medium", fill=theme.INK_SOFT)
+    )
+    for index, (key, label_en, label_fa) in enumerate(theme.FEATURES):
+        y = (125.6 if persian else 88.4) + index * 5.7
+        label = label_fa if persian else label_en
+        block.add(icons.icon(key, BACK_LEFT + 2.2, y - 1.0, 5.4, colourway.accent,
+                             stroke_width=1.5))
+        block.add(
+            tp.text(
+                label,
+                BACK_RIGHT if persian else BACK_LEFT + 6.4,
+                y,
+                tp.fit(label, row_style, 46 if persian else 48),
+                outline,
+            )
+        )
+    return block
+
+
+def follow_us(outline: bool) -> Node:
+    """QR code, Instagram handle and web address."""
+    block = group("04-FOLLOW-US")
+    block.add(art.qr_code(theme.WEBSITE_URL, BACK_LEFT, 152.0, 12.4, theme.NAVY_TEXT))
+    block.add(
+        tp.text(theme.FOLLOW_US, BACK_LEFT + 15.6, 155.4,
+                tp.Style(size=3.1, weight="semibold", fill=theme.INK_SOFT), outline)
+    )
+    block.add(
+        icons.icon("instagram", BACK_LEFT + 17.0, 159.4, 4.2, theme.INK_SOFT, stroke_width=1.6)
+    )
+    block.add(
+        tp.text(theme.INSTAGRAM, BACK_LEFT + 20.0, 160.5,
+                tp.Style(size=3.0, weight="medium", fill=theme.INK_SOFT), outline),
+        tp.text(theme.WEBSITE, BACK_LEFT + 15.6, 165.0,
+                tp.Style(size=3.0, weight="medium", fill=theme.INK_SOFT), outline),
+    )
+    return block
+
+
+def _back_left_column(colourway: theme.ColourWay, outline: bool, gold: str) -> list[Node]:
+    layer = group("03-BRAND-AND-FEATURES")
     layer.add(
+        back_lockup(colourway, outline, gold),
+        back_paragraph(outline),
+        features_list(colourway, outline, persian=False),
+        features_list(colourway, outline, persian=True),
+    )
+    return [layer, follow_us(outline)]
+
+
+RIGHT_CENTRE, RIGHT_LEFT, RIGHT_RIGHT = 112.0, 84.0, 141.0
+_RIGHT_LABEL = tp.Style(size=3.2, weight="medium", fill=theme.INK_SOFT, tracking=0.22)
+
+
+def suitable_for(colourway: theme.ColourWay, outline: bool) -> Node:
+    """SUITABLE FOR heading with the seven usage rows."""
+    block = group("suitable-for")
+    block.add(
         art.heading_with_rules(
-            theme.FEATURES_TITLE_EN, centre, 81.0, 28.5,
+            theme.SUITABLE_TITLE, RIGHT_CENTRE, 26.0, 28.5,
             tp.Style(size=4.2, weight="semibold", fill=colourway.accent, anchor="middle",
                      tracking=0.5),
             theme.GOLD, outline)
     )
-    en_style = tp.Style(size=3.0, weight="medium", fill=theme.INK_SOFT)
-    for index, (key, label_en, _) in enumerate(theme.FEATURES):
-        y = 88.4 + index * 5.7
-        layer.add(icons.icon(key, left + 2.2, y - 1.0, 5.4, colourway.accent, stroke_width=1.5))
-        layer.add(tp.text(label_en, left + 6.4, y, tp.fit(label_en, en_style, 48), outline))
+    for index, (key, _, label_en) in enumerate(theme.USAGES):
+        y = 35.4 + index * 8.1
+        block.add(
+            icons.icon(key, RIGHT_LEFT + 3.6, y - 1.1, 7.0, colourway.accent, stroke_width=1.55)
+        )
+        block.add(
+            tp.text(label_en, RIGHT_LEFT + 13.0, y, tp.fit(label_en, _RIGHT_LABEL, 44), outline)
+        )
+    return block
 
-    layer.add(
-        art.heading_with_rules(
-            theme.FEATURES_TITLE_FA, centre, 118.6, 28.5,
-            tp.Style(size=4.4, script="persian", weight="medium", fill=colourway.accent,
-                     anchor="middle"),
-            theme.GOLD, outline)
-    )
-    fa_style = tp.Style(size=3.2, script="persian", fill=theme.INK_SOFT, anchor="end")
-    for index, (key, _, label_fa) in enumerate(theme.FEATURES):
-        y = 125.6 + index * 5.7
-        layer.add(icons.icon(key, left + 2.2, y - 1.0, 5.4, colourway.accent, stroke_width=1.5))
-        layer.add(tp.text(label_fa, right, y, tp.fit(label_fa, fa_style, 46), outline))
 
-    follow = group("04-FOLLOW-US")
-    follow.add(art.qr_code(theme.WEBSITE_URL, left, 152.0, 12.4, theme.NAVY_TEXT))
-    follow.add(
-        tp.text(theme.FOLLOW_US, left + 15.6, 155.4,
-                tp.Style(size=3.1, weight="semibold", fill=theme.INK_SOFT), outline)
+def viscose_block(colourway: theme.ColourWay, outline: bool) -> Node:
+    """100% VISCOSE panel with the natural fibre and extra soft rows."""
+    block = group("viscose")
+    block.add(art.rule(RIGHT_LEFT, 95.4, RIGHT_RIGHT, theme.GOLD, 0.32))
+    block.add(
+        tp.text(theme.VISCOSE_TITLE, RIGHT_CENTRE, 101.6,
+                tp.Style(size=4.2, weight="semibold", fill=colourway.accent, anchor="middle",
+                         tracking=0.5), outline)
     )
-    follow.add(icons.icon("instagram", left + 17.0, 159.4, 4.2, theme.INK_SOFT, stroke_width=1.6))
-    follow.add(
-        tp.text(theme.INSTAGRAM, left + 20.0, 160.5,
-                tp.Style(size=3.0, weight="medium", fill=theme.INK_SOFT), outline),
-        tp.text(theme.WEBSITE, left + 15.6, 165.0,
-                tp.Style(size=3.0, weight="medium", fill=theme.INK_SOFT), outline),
+    block.add(art.rule(RIGHT_LEFT, 105.0, RIGHT_RIGHT, theme.GOLD, 0.32))
+    for index, (key, label) in enumerate(theme.MATERIAL_ROWS):
+        y = 113.4 + index * 9.4
+        block.add(
+            icons.icon(key, RIGHT_LEFT + 3.6, y - 1.2, 7.4, colourway.accent, stroke_width=1.5)
+        )
+        block.add(tp.text(label, RIGHT_LEFT + 13.0, y, tp.fit(label, _RIGHT_LABEL, 44), outline))
+    return block
+
+
+def origin_block(outline: bool) -> Node:
+    block = group("made-in-iran")
+    block.add(art.rule(RIGHT_LEFT, 128.6, RIGHT_RIGHT, theme.GOLD, 0.32))
+    block.add(
+        tp.text(theme.ORIGIN, RIGHT_CENTRE, 134.4,
+                tp.Style(size=3.6, weight="semibold", fill=theme.NAVY_TEXT, anchor="middle",
+                         tracking=0.55), outline)
     )
-    return [layer, follow]
+    return block
+
+
+def certification_marks(outline: bool) -> Node:
+    block = group("06-CERTIFICATION-MARKS")
+    block.add(art.iran_standard_mark(93.0, 142.4, 4.1, theme.NAVY_TEXT, outline))
+    block.add(art.iso_mark(111.0, 143.0, 4.0, theme.NAVY_TEXT, outline))
+    block.add(icons.icon("recycle", 130.0, 143.0, 10.6, theme.BLACK, stroke_width=1.9))
+    return block
+
+
+def barcode_block(outline: bool) -> Node:
+    return group("07-BARCODE").add(
+        art.ean13(theme.BARCODE_DIGITS, 100.0, 150.0, 40.0, 14.4, outline=outline)
+    )
 
 
 def _back_right_column(colourway: theme.ColourWay, outline: bool) -> list[Node]:
     layer = group("05-SUITABLE-FOR")
-    centre, left, right = 112.0, 84.0, 141.0
-
     layer.add(
-        art.heading_with_rules(
-            theme.SUITABLE_TITLE, centre, 26.0, 28.5,
-            tp.Style(size=4.2, weight="semibold", fill=colourway.accent, anchor="middle",
-                     tracking=0.5),
-            theme.GOLD, outline)
+        suitable_for(colourway, outline),
+        viscose_block(colourway, outline),
+        origin_block(outline),
     )
-    label_style = tp.Style(size=3.2, weight="medium", fill=theme.INK_SOFT, tracking=0.22)
-    for index, (key, _, label_en) in enumerate(theme.USAGES):
-        y = 35.4 + index * 8.1
-        layer.add(icons.icon(key, left + 3.6, y - 1.1, 7.0, colourway.accent, stroke_width=1.55))
-        layer.add(tp.text(label_en, left + 13.0, y, tp.fit(label_en, label_style, 44), outline))
-
-    layer.add(art.rule(left, 95.4, right, theme.GOLD, 0.32))
-    layer.add(
-        tp.text(theme.VISCOSE_TITLE, centre, 101.6,
-                tp.Style(size=4.2, weight="semibold", fill=colourway.accent, anchor="middle",
-                         tracking=0.5), outline)
-    )
-    layer.add(art.rule(left, 105.0, right, theme.GOLD, 0.32))
-
-    for index, (key, label) in enumerate(theme.MATERIAL_ROWS):
-        y = 113.4 + index * 9.4
-        layer.add(icons.icon(key, left + 3.6, y - 1.2, 7.4, colourway.accent, stroke_width=1.5))
-        layer.add(tp.text(label, left + 13.0, y, tp.fit(label, label_style, 44), outline))
-
-    layer.add(art.rule(left, 128.6, right, theme.GOLD, 0.32))
-    layer.add(
-        tp.text(theme.ORIGIN, centre, 134.4,
-                tp.Style(size=3.6, weight="semibold", fill=theme.NAVY_TEXT, anchor="middle",
-                         tracking=0.55), outline)
-    )
-
-    marks = group("06-CERTIFICATION-MARKS")
-    marks.add(art.iran_standard_mark(93.0, 142.4, 4.1, theme.NAVY_TEXT, outline))
-    marks.add(art.iso_mark(111.0, 143.0, 4.0, theme.NAVY_TEXT, outline))
-    marks.add(icons.icon("recycle", 130.0, 143.0, 10.6, theme.BLACK, stroke_width=1.9))
-
-    barcode = group("07-BARCODE").add(
-        art.ean13(theme.BARCODE_DIGITS, 100.0, 150.0, 40.0, 14.4, outline=outline)
-    )
-    return [layer, marks, barcode]
+    return [layer, certification_marks(outline), barcode_block(outline)]
