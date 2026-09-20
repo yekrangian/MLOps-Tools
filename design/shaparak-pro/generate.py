@@ -8,8 +8,7 @@ Run ``python generate.py`` to write, into ``output/``:
 * ``svg-live-text/`` the same four panels with editable ``<text>`` elements
 * ``pdf/``           Illustrator-compatible PDFs of the outlined panels
 * ``ai/`` and ``eps/`` layered Illustrator 8 files
-* ``preview/``       PNG previews plus a presentation sheet that mirrors the
-  original two-version mock-up
+* ``preview/``       PNG previews plus a presentation sheet (front and back)
 * ``assets/``        every item of the pack on its own artboard (logo, icons,
   barcode, headlines...) as SVG, AI and EPS, with a contact sheet index
 """
@@ -83,8 +82,9 @@ def sheet_document() -> Document:
     margin, chip_w, gap_x, gap_y = 10.0, 30.0, 9.0, 12.0
     width = margin + chip_w + 6 + theme.PANEL_W * 2 + gap_x + margin
     height = margin + theme.PANEL_H * 2 + gap_y + margin
-    doc = Document(width, height, title="Shaparak Pro - two colour ways",
-                   desc="Presentation sheet: turquoise and navy, front and back.")
+    colour_names = ", ".join(cw.name_en for cw in theme.COLOURWAYS)
+    doc = Document(width, height, title=f"Shaparak Pro - {colour_names}",
+                   desc=f"Presentation sheet: {colour_names.lower()}, front and back.")
     doc.add(rect(0, 0, width, height, fill="#FFFFFF"))
 
     for row, colourway in enumerate(theme.COLOURWAYS):
@@ -94,10 +94,7 @@ def sheet_document() -> Document:
         label_style = tp.Style(size=4.0, script="persian", weight="medium",
                                fill=colourway.on_primary, anchor="middle")
         chip.add(
-            tp.text(colourway.name_fa.split("–")[0].strip(), margin + chip_w / 2, y + 62,
-                    label_style),
-            tp.text(colourway.name_fa.split("–")[1].strip(), margin + chip_w / 2, y + 71,
-                    label_style),
+            tp.text(colourway.name_fa, margin + chip_w / 2, y + 66.5, label_style),
         )
         doc.add(chip)
         for column, side in enumerate(("front", "back")):

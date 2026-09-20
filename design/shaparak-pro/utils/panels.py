@@ -2,7 +2,7 @@
 
 ``front_panel`` and ``back_panel`` return one ``<g>`` holding a complete
 150 x 170 mm panel, built out of named layers so Illustrator shows a tidy
-layer list. Both take a colour way (turquoise or navy), a text mode
+layer list. Both take the navy colour way, a text mode
 (outlined or live) and a ``mockup`` flag that adds the pouch rounding, the
 film sheen and the centre fin seam used for the presentation sheet.
 """
@@ -139,7 +139,7 @@ def front_panel(
     panel.add(viscose_badge(colourway, outline))
     panel.add(front_lockup(colourway, outline, gold))
     panel.add(group("07-TOWEL-BUTTERFLY").add(
-        art.towel_butterfly(W / 2, 113, 76, outline=gold, uid=uid)
+        art.towel_butterfly(W / 2, 113.4, 60, outline=gold, uid=uid)
     ))
     panel.add(extra_soft_claim(outline))
     panel.add(usage_strip(colourway, outline))
@@ -180,15 +180,15 @@ def front_lockup(colourway: theme.ColourWay, outline: bool, gold: str = theme.GO
     lockup.add(art.heading_with_rules(theme.SUB_BRAND, W / 2, 64.6, 26, pro_style, theme.GOLD,
                                       outline, gap=3.4))
     lockup.add(
-        tp.text(theme.TITLE_FA, W / 2, 74.6,
+        tp.text(theme.TITLE_FA, W / 2, 73.1,
                 tp.fit(theme.TITLE_FA,
                        tp.Style(size=6.4, script="persian", weight="medium",
                                 fill=theme.NAVY_TEXT, anchor="middle"), 104), outline),
-        tp.text(theme.TITLE_EN, W / 2, 81.6,
+        tp.text(theme.TITLE_EN, W / 2, 80.1,
                 tp.fit(theme.TITLE_EN,
                        tp.Style(size=4.1, weight="medium", fill=theme.NAVY_TEXT, anchor="middle",
                                 tracking=0.55), 104), outline),
-        tp.text(theme.TITLE_AR, W / 2, 88.4,
+        tp.text(theme.TITLE_AR, W / 2, 86.9,
                 tp.fit(theme.TITLE_AR,
                        tp.Style(size=4.8, script="persian", fill=theme.NAVY_TEXT,
                                 anchor="middle"), 92), outline),
@@ -211,17 +211,27 @@ def extra_soft_claim(outline: bool) -> Node:
     return claim
 
 
+def _usage_lines(label: str) -> tuple[str, ...]:
+    """Two word labels stack, so every column keeps the same narrow measure."""
+    return tuple(label.split(" ", 1)) if " " in label else (label,)
+
+
 def usage_strip(colourway: theme.ColourWay, outline: bool) -> Node:
-    """Seven usage icons with their Persian labels, drawn in the knock-out colour."""
+    """Seven usage icons with their English labels, drawn in the knock-out colour."""
     layer = group("09-USAGE-STRIP")
     left, right = 17.0, 133.0
     step = (right - left) / (len(theme.USAGES) - 1)
-    label_style = tp.Style(size=3.4, script="persian", weight="medium", fill=colourway.on_primary,
-                           anchor="middle")
-    for index, (key, label_fa, _) in enumerate(theme.USAGES):
+    labels = [_usage_lines(label) for _, label in theme.USAGES]
+    style = tp.Style(size=2.8, weight="semibold", fill=colourway.on_primary, anchor="middle",
+                     tracking=0.2)
+    for lines in labels:
+        for text in lines:
+            style = tp.fit(text, style, step - 1.4)
+    for index, ((key, _), lines) in enumerate(zip(theme.USAGES, labels, strict=True)):
         cx = left + index * step
-        layer.add(icons.icon(key, cx, 142.0, 8.0, colourway.on_primary, stroke_width=1.65))
-        layer.add(tp.text(label_fa, cx, 149.3, tp.fit(label_fa, label_style, step - 1.2), outline))
+        layer.add(icons.icon(key, cx, 141.0, 7.6, colourway.on_primary, stroke_width=1.6))
+        for row, text in enumerate(lines):
+            layer.add(tp.text(text, cx, 147.6 + row * 3.3, style, outline))
     return layer
 
 
@@ -331,39 +341,23 @@ def back_paragraph(outline: bool) -> Node:
     )
 
 
-def features_list(colourway: theme.ColourWay, outline: bool, persian: bool) -> Node:
-    """The FEATURES / ویژگی‌ها list with its gold-ruled heading."""
-    block = group("features-fa" if persian else "features-en")
-    top = 118.6 if persian else 81.0
-    title = theme.FEATURES_TITLE_FA if persian else theme.FEATURES_TITLE_EN
-    title_style = (
-        tp.Style(size=4.4, script="persian", weight="medium", fill=colourway.accent,
-                 anchor="middle")
-        if persian
-        else tp.Style(size=4.2, weight="semibold", fill=colourway.accent, anchor="middle",
-                      tracking=0.5)
-    )
+def features_list(colourway: theme.ColourWay, outline: bool) -> Node:
+    """The FEATURES list with its gold-ruled heading."""
+    block = group("features-en")
     block.add(
-        art.heading_with_rules(title, BACK_CENTRE, top, 28.5, title_style, theme.GOLD, outline)
+        art.heading_with_rules(
+            theme.FEATURES_TITLE_EN, BACK_CENTRE, 84.0, 28.5,
+            tp.Style(size=4.2, weight="semibold", fill=colourway.accent, anchor="middle",
+                     tracking=0.5),
+            theme.GOLD, outline)
     )
-    row_style = (
-        tp.Style(size=3.2, script="persian", fill=theme.INK_SOFT, anchor="end")
-        if persian
-        else tp.Style(size=3.0, weight="medium", fill=theme.INK_SOFT)
-    )
-    for index, (key, label_en, label_fa) in enumerate(theme.FEATURES):
-        y = (125.6 if persian else 88.4) + index * 5.7
-        label = label_fa if persian else label_en
-        block.add(icons.icon(key, BACK_LEFT + 2.2, y - 1.0, 5.4, colourway.accent,
+    row_style = tp.Style(size=3.2, weight="medium", fill=theme.INK_SOFT)
+    for index, (key, label) in enumerate(theme.FEATURES):
+        y = 94.0 + index * 8.8
+        block.add(icons.icon(key, BACK_LEFT + 3.0, y - 1.1, 6.6, colourway.accent,
                              stroke_width=1.5))
         block.add(
-            tp.text(
-                label,
-                BACK_RIGHT if persian else BACK_LEFT + 6.4,
-                y,
-                tp.fit(label, row_style, 46 if persian else 48),
-                outline,
-            )
+            tp.text(label, BACK_LEFT + 12.0, y, tp.fit(label, row_style, 46), outline)
         )
     return block
 
@@ -371,18 +365,18 @@ def features_list(colourway: theme.ColourWay, outline: bool, persian: bool) -> N
 def follow_us(outline: bool) -> Node:
     """QR code, Instagram handle and web address."""
     block = group("04-FOLLOW-US")
-    block.add(art.qr_code(theme.WEBSITE_URL, BACK_LEFT, 152.0, 12.4, theme.NAVY_TEXT))
+    block.add(art.qr_code(theme.WEBSITE_URL, BACK_LEFT, 143.0, 13.0, theme.NAVY_TEXT))
     block.add(
-        tp.text(theme.FOLLOW_US, BACK_LEFT + 15.6, 155.4,
+        tp.text(theme.FOLLOW_US, BACK_LEFT + 15.6, 146.6,
                 tp.Style(size=3.1, weight="semibold", fill=theme.INK_SOFT), outline)
     )
     block.add(
-        icons.icon("instagram", BACK_LEFT + 17.0, 159.4, 4.2, theme.INK_SOFT, stroke_width=1.6)
+        icons.icon("instagram", BACK_LEFT + 17.0, 151.0, 4.2, theme.INK_SOFT, stroke_width=1.6)
     )
     block.add(
-        tp.text(theme.INSTAGRAM, BACK_LEFT + 20.0, 160.5,
+        tp.text(theme.INSTAGRAM, BACK_LEFT + 20.0, 152.1,
                 tp.Style(size=3.0, weight="medium", fill=theme.INK_SOFT), outline),
-        tp.text(theme.WEBSITE, BACK_LEFT + 15.6, 165.0,
+        tp.text(theme.WEBSITE, BACK_LEFT + 15.6, 156.8,
                 tp.Style(size=3.0, weight="medium", fill=theme.INK_SOFT), outline),
     )
     return block
@@ -393,8 +387,7 @@ def _back_left_column(colourway: theme.ColourWay, outline: bool, gold: str) -> l
     layer.add(
         back_lockup(colourway, outline, gold),
         back_paragraph(outline),
-        features_list(colourway, outline, persian=False),
-        features_list(colourway, outline, persian=True),
+        features_list(colourway, outline),
     )
     return [layer, follow_us(outline)]
 
@@ -413,7 +406,7 @@ def suitable_for(colourway: theme.ColourWay, outline: bool) -> Node:
                      tracking=0.5),
             theme.GOLD, outline)
     )
-    for index, (key, _, label_en) in enumerate(theme.USAGES):
+    for index, (key, label_en) in enumerate(theme.USAGES):
         y = 35.4 + index * 8.1
         block.add(
             icons.icon(key, RIGHT_LEFT + 3.6, y - 1.1, 7.0, colourway.accent, stroke_width=1.55)

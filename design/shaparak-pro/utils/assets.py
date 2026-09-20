@@ -203,6 +203,11 @@ def _slug(text: str) -> str:
     return "".join(keep).strip("-").replace("--", "-")
 
 
+def _colourway_suffix(colourway: theme.ColourWay) -> str:
+    """Omit the colour key when only one colourway is produced."""
+    return "" if len(theme.COLOURWAYS) == 1 else f"-{colourway.key}"
+
+
 def catalogue() -> list[Asset]:
     items: list[Asset] = []
 
@@ -226,28 +231,30 @@ def catalogue() -> list[Asset]:
             art.towel_butterfly(60, 55, 110, outline=theme.GOLD, uid="asset-towel")),
         "Folded towel butterfly", "پروانه حوله تاشده")
     for cw in theme.COLOURWAYS:
-        add("02-illustration", f"wave-divider-{cw.key}", (lambda c=cw: _wave(c)),
+        suffix = _colourway_suffix(cw)
+        add("02-illustration", f"wave-divider{suffix}", (lambda c=cw: _wave(c)),
             f"Wave divider, {cw.name_en}", f"موج تفکیک‌کننده – {cw.name_fa}")
-        add("02-illustration", f"seal-band-{cw.key}", (lambda c=cw: _seal_band(c, slot=False)),
+        add("02-illustration", f"seal-band{suffix}", (lambda c=cw: _seal_band(c, slot=False)),
             f"Crimped seal band, {cw.name_en}", f"نوار دوخت – {cw.name_fa}")
-        add("02-illustration", f"hang-slot-{cw.key}", (lambda c=cw: _seal_band(c, slot=True)),
+        add("02-illustration", f"hang-slot{suffix}", (lambda c=cw: _seal_band(c, slot=True)),
             f"Seal band with euro hang slot, {cw.name_en}",
             f"نوار دوخت با جای آویز – {cw.name_fa}")
 
     # --- front blocks -------------------------------------------------------
     for cw in theme.COLOURWAYS:
-        add("03-front-blocks", f"viscose-badge-{cw.key}",
+        suffix = _colourway_suffix(cw)
+        add("03-front-blocks", f"viscose-badge{suffix}",
             (lambda c=cw: panels.viscose_badge(c, OUTLINE)),
             f"100% VISCOSE badge, {cw.name_en}", f"مهر ۱۰۰٪ ویسکوز – {cw.name_fa}")
-        add("03-front-blocks", f"usage-strip-{cw.key}",
+        add("03-front-blocks", f"usage-strip{suffix}",
             (lambda c=cw: panels.usage_strip(c, OUTLINE)),
             f"Usage icon strip, {cw.name_en}", f"نوار کاربردها – {cw.name_fa}",
             backdrop=cw.primary, margin=4.0)
-        add("03-front-blocks", f"size-box-{cw.key}",
+        add("03-front-blocks", f"size-box{suffix}",
             (lambda c=cw: panels.size_box(c, OUTLINE)),
             f"Size options box, {cw.name_en}", f"کادر سایزها – {cw.name_fa}",
             backdrop=cw.primary, margin=4.0)
-        add("03-front-blocks", f"front-lockup-{cw.key}",
+        add("03-front-blocks", f"front-lockup{suffix}",
             (lambda c=cw: panels.front_lockup(c, OUTLINE)),
             f"Front lock-up with all three titles, {cw.name_en}",
             f"لوگو و عناوین روی پنل جلو – {cw.name_fa}")
@@ -256,19 +263,17 @@ def catalogue() -> list[Asset]:
 
     # --- back blocks --------------------------------------------------------
     for cw in theme.COLOURWAYS:
-        add("04-back-blocks", f"back-lockup-{cw.key}",
+        suffix = _colourway_suffix(cw)
+        add("04-back-blocks", f"back-lockup{suffix}",
             (lambda c=cw: panels.back_lockup(c, OUTLINE)),
             f"Back panel lock-up, {cw.name_en}", f"لوگوی پنل پشت – {cw.name_fa}")
-        add("04-back-blocks", f"features-list-en-{cw.key}",
-            (lambda c=cw: panels.features_list(c, OUTLINE, persian=False)),
-            f"FEATURES list, {cw.name_en}", f"فهرست ویژگی‌ها انگلیسی – {cw.name_fa}")
-        add("04-back-blocks", f"features-list-fa-{cw.key}",
-            (lambda c=cw: panels.features_list(c, OUTLINE, persian=True)),
-            f"Persian features list, {cw.name_en}", f"فهرست ویژگی‌ها فارسی – {cw.name_fa}")
-        add("04-back-blocks", f"suitable-for-{cw.key}",
+        add("04-back-blocks", f"features-list-en{suffix}",
+            (lambda c=cw: panels.features_list(c, OUTLINE)),
+            f"FEATURES list, {cw.name_en}", f"فهرست ویژگی‌ها – {cw.name_fa}")
+        add("04-back-blocks", f"suitable-for{suffix}",
             (lambda c=cw: panels.suitable_for(c, OUTLINE)),
             f"SUITABLE FOR list, {cw.name_en}", f"فهرست موارد استفاده – {cw.name_fa}")
-        add("04-back-blocks", f"viscose-block-{cw.key}",
+        add("04-back-blocks", f"viscose-block{suffix}",
             (lambda c=cw: panels.viscose_block(c, OUTLINE)),
             f"100% VISCOSE block, {cw.name_en}", f"بلوک ویسکوز – {cw.name_fa}")
     add("04-back-blocks", "intro-paragraph", lambda: panels.back_paragraph(OUTLINE),
@@ -317,23 +322,16 @@ def catalogue() -> list[Asset]:
     add("07-type", "sizes-title-fa", _text_asset(theme.SIZES_TITLE_FA, _FA_LABEL,
                                                  "sizes-title-fa"),
         "Available sizes heading", "عنوان سایزهای موجود")
-    add("07-type", "features-title-fa", _text_asset(theme.FEATURES_TITLE_FA, _FA_LABEL,
-                                                    "features-title-fa"),
-        "Persian features heading", "عنوان ویژگی‌ها")
     for index, (size_text, note) in enumerate(theme.SIZES, start=1):
         add("07-type", f"size-{index}-fa",
             _text_asset(f"{size_text} – {note}", _FA_LABEL, f"size-{index}"),
             f"Size option {index}", f"سایز {index}")
-    for key, label_fa, label_en in theme.USAGES:
-        add("07-type", f"label-usage-{key}-fa", _text_asset(label_fa, _FA_LABEL, key),
-            f"Usage label: {label_en}", f"برچسب کاربرد: {label_fa}")
+    for key, label_en in theme.USAGES:
         add("07-type", f"label-usage-{key}-en", _text_asset(label_en, _EN_LABEL, key),
-            f"Usage label: {label_en}", f"برچسب کاربرد انگلیسی: {label_en}")
-    for key, label_en, label_fa in theme.FEATURES:
-        add("07-type", f"label-feature-{key}-fa", _text_asset(label_fa, _FA_LABEL, key),
-            f"Feature label: {label_en}", f"برچسب ویژگی: {label_fa}")
+            f"Usage label: {label_en}", f"برچسب کاربرد: {label_en}")
+    for key, label_en in theme.FEATURES:
         add("07-type", f"label-feature-{key}-en", _text_asset(label_en, _EN_LABEL, key),
-            f"Feature label: {label_en}", f"برچسب ویژگی انگلیسی: {label_en}")
+            f"Feature label: {label_en}", f"برچسب ویژگی: {label_en}")
     for text in (theme.SUITABLE_TITLE, theme.VISCOSE_TITLE, theme.ORIGIN, theme.FEATURES_TITLE_EN):
         add("07-type", f"heading-{_slug(text)}", _text_asset(text, _EN_LABEL, _slug(text)),
             f"Heading: {text}", f"عنوان: {text}")
