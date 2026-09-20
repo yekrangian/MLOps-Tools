@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="150mm" height="170mm" viewBox="0 0 150 170">
+  <title>Shaparak Pro - Navy - back panel</title>
+  <desc>Flow pack back panel, 150 x 170 mm, live text.</desc>
+  <g id="PANEL-BACK-navy" data-name="PANEL-BACK-navy">
+    <defs>
+      <linearGradient id="back-navy-l-sheen" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0%" stop-color="#000000" stop-opacity="0.10"/>
+        <stop offset="16%" stop-color="#FFFFFF" stop-opacity="0.18"/>
+        <stop offset="50%" stop-color="#FFFFFF" stop-opacity="0.02"/>
+        <stop offset="84%" stop-color="#FFFFFF" stop-opacity="0.16"/>
+        <stop offset="100%" stop-color="#000000" stop-opacity="0.12"/>
+      </linearGradient>
+      <linearGradient id="back-navy-l-seam" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0%" stop-color="#B9BCC0" stop-opacity="0.45"/>
+        <stop offset="35%" stop-color="#FFFFFF" stop-opacity="0.0"/>
+        <stop offset="65%" stop-color="#FFFFFF" stop-opacity="0.0"/>
+        <stop offset="100%" stop-color="#B9BCC0" stop-opacity="0.45"/>
+      </linearGradient>
+      <linearGradient id="back-navy-l-gold" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#D9B978"/>
+        <stop offset="45%" stop-color="#BE8C3C"/>
+        <stop offset="100%" stop-color="#9C6F27"/>
+      </linearGradient>
+    </defs>
+    <g id="01-BACKGROUND" data-name="01-BACKGROUND">
+      <rect x="0" y="0" width="150" height="170" fill="#FDFDFC"/>
+      <rect x="0" y="16" width="2.2" height="154" fill="#1F2C50"/>
+      <rect x="147.8" y="16" width="2.2" height="154" fill="#1F2C50"/>
+      <rect x="0" y="166.6" width="150" height="3.4" fill="#1F2C50"/>
+    </g>
+    <g id="02-TOP-SEAL" data-name="02-TOP-SEAL">
+      <rect x="0" y="0" width="150" height="16" fill="#1F2C50"/>
+      <g opacity="0.5" id="crimp-ribbing" data-name="crimp-ribbing">
+        <line x1="0" y1="0.95" x2="150" y2="0.95" stroke="#40507B" stroke-width="0.3"/>
+        <line x1="0" y1="1.9" x2="150" y2="1.9" stroke="#40507B" stroke-width="0.3"/>
+        <line x1="0" y1="2.85" x2="150" y2="2.85" stroke="#40507B" stroke-width="0.3"/>
+        <line x1="0" y1="3.8" x2="150" y2="3.8" stroke="#40507B" stroke-width="0.3"/>
+        <line x1="0" y1="4.75" x2="150" y2="4.75" stroke="#40507B" stroke-width="0.3"/>
+        <line x1="0" y1="5.7" x2="150" y2="5.7" stroke="#40507B" stroke-width="0.3"/>
+        <line x1="0" y1="6.65" x2="150" y2="6.65" stroke="#40507B" stroke-width="0.3"/>
+        <line x1="0" y1="7.6" x2="150" y2="7.6" stroke="#40507B" stroke-width="0.3"/>
+        <line x1="0" y1="8.55" x2="150" y2="8.55" stroke="#40507B" stroke-width="0.3"/>
+        <line x1="0" y1="9.5" x2="150" y2="9.5" stroke="#40507B" stroke-width="0.3"/>
+        <line x1="0" y1="10.45" x2="150" y2="10.45" stroke="#40507B" stroke-width="0.3"/>
+        <line x1="0" y1="11.4" x2="150" y2="11.4" stroke="#40507B" stroke-width="0.3"/>
+        <line x1="0" y1="12.35" x2="150" y2="12.35" stroke="#40507B" stroke-width="0.3"/>
+        <line x1="0" y1="13.3" x2="150" y2="13.3" stroke="#40507B" stroke-width="0.3"/>
+        <line x1="0" y1="14.25" x2="150" y2="14.25" stroke="#40507B" stroke-width="0.3"/>
+      </g>
+    </g>
+    <g id="03-BRAND-AND-FEATURES" data-name="03-BRAND-AND-FEATURES">
+      <g id="brand-lockup" data-name="brand-lockup">
+        <g transform="translate(38 28) scale(0.2917)" fill="none" stroke="#BE8C3C" stroke-width="2.7429" stroke-linecap="round" stroke-linejoin="round" id="butterfly-logo" data-name="butterfly-logo">
+          <ellipse cx="0" cy="0" rx="16.2" ry="8.8" transform="translate(16.8 -8.6) rotate(-21)"/>
+          <ellipse cx="0" cy="0" rx="9.8" ry="5.8" transform="translate(10.6 6.4) rotate(30)"/>
+          <path d="M0,-6.8 C2.6,-11.4 5.6,-14.6 9.2,-16.4"/>
+          <circle cx="10.2" cy="-16.8" r="1.3" fill="#BE8C3C" stroke="none"/>
+          <ellipse cx="0" cy="0" rx="16.2" ry="8.8" transform="translate(-16.8 -8.6) rotate(21)"/>
+          <ellipse cx="0" cy="0" rx="9.8" ry="5.8" transform="translate(-10.6 6.4) rotate(-30)"/>
+          <path d="M0,-6.8 C-2.6,-11.4 -5.6,-14.6 -9.2,-16.4"/>
+          <circle cx="-10.2" cy="-16.8" r="1.3" fill="#BE8C3C" stroke="none"/>
+          <path d="M0,-8.0 C2.0,-4.8 2.3,0.2 1.0,5.4 C0.6,6.9 -0.6,6.9 -1.0,5.4 C-2.3,0.2 -2.0,-4.8 0,-8.0 Z" fill="#BE8C3C" stroke="none"/>
+        </g>
+        <text x="38" y="41" fill="#16203F" font-family="Montserrat, sans-serif" font-size="8.6" font-weight="700" letter-spacing="0.95" text-anchor="middle">SHAPARAK</text>
+        <g>
+          <text x="38" y="46.8" fill="#BE8C3C" font-family="Montserrat, sans-serif" font-size="4.6" font-weight="500" letter-spacing="1.5" text-anchor="middle">PRO</text>
+          <line x1="21" y1="45.236" x2="28.6583" y2="45.236" stroke="#BE8C3C" stroke-width="0.3" stroke-linecap="round"/>
+          <line x1="47.3417" y1="45.236" x2="55" y2="45.236" stroke="#BE8C3C" stroke-width="0.3" stroke-linecap="round"/>
+        </g>
+        <text x="38" y="52.6" fill="#1F2C50" font-family="Montserrat, sans-serif" font-size="2.5915" font-weight="600" letter-spacing="0.2508" text-anchor="middle">PROFESSIONAL DISPOSABLE TOWEL</text>
+      </g>
+      <g id="intro-paragraph" data-name="intro-paragraph">
+        <text x="10" y="59.6" fill="#3C4763" font-family="Montserrat, sans-serif" font-size="2.737" font-weight="400">Shaparak Pro disposable towels are made</text>
+        <text x="10" y="63.9" fill="#3C4763" font-family="Montserrat, sans-serif" font-size="2.737" font-weight="400">from high quality material, soft and</text>
+        <text x="10" y="68.2" fill="#3C4763" font-family="Montserrat, sans-serif" font-size="2.737" font-weight="400">highly absorbent, ideal for professional</text>
+        <text x="10" y="72.5" fill="#3C4763" font-family="Montserrat, sans-serif" font-size="2.737" font-weight="400">and personal use.</text>
+      </g>
+      <g id="features-en" data-name="features-en">
+        <g>
+          <text x="38" y="84" fill="#1F2C50" font-family="Montserrat, sans-serif" font-size="4.2" font-weight="600" letter-spacing="0.5" text-anchor="middle">FEATURES</text>
+          <line x1="9.5" y1="82.572" x2="22.4491" y2="82.572" stroke="#BE8C3C" stroke-width="0.3" stroke-linecap="round"/>
+          <line x1="53.5509" y1="82.572" x2="66.5" y2="82.572" stroke="#BE8C3C" stroke-width="0.3" stroke-linecap="round"/>
+        </g>
+        <g transform="translate(9.7000 89.6000) scale(0.275000)" fill="none" stroke="#1F2C50" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" id="icon-hygienic" data-name="icon-hygienic">
+          <path d="M12,2.8 L19.6,5.8 L19.6,11.6 C19.6,16.2 16.5,20.1 12,21.4 C7.5,20.1 4.4,16.2 4.4,11.6 L4.4,5.8 Z"/>
+          <path d="M8.6,12.0 L11.0,14.5 L15.5,9.7"/>
+        </g>
+        <text x="22" y="94" fill="#3C4763" font-family="Montserrat, sans-serif" font-size="3.2" font-weight="500">Hygienic &amp; Clean</text>
+        <g transform="translate(9.7000 98.4000) scale(0.275000)" fill="none" stroke="#1F2C50" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" id="icon-soft" data-name="icon-soft">
+          <path d="M12,21.2 C12,14.4 15.6,9.0 21.2,7.0 C21.2,14.0 17.6,19.2 12,21.2 Z"/>
+          <path d="M12,21.2 C12,14.4 8.4,9.0 2.8,7.0 C2.8,14.0 6.4,19.2 12,21.2 Z"/>
+          <line x1="12" y1="21.2" x2="12" y2="10.6"/>
+        </g>
+        <text x="22" y="102.8" fill="#3C4763" font-family="Montserrat, sans-serif" font-size="3.2" font-weight="500">Soft &amp; Comfortable</text>
+        <g transform="translate(9.7000 107.2000) scale(0.275000)" fill="none" stroke="#1F2C50" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" id="icon-absorbent" data-name="icon-absorbent">
+          <path d="M12,2.6 C12,2.6 5.4,10.2 5.4,14.4 C5.4,18.1 8.4,21.2 12,21.2 C15.6,21.2 18.6,18.1 18.6,14.4 C18.6,10.2 12,2.6 12,2.6 Z"/>
+          <path d="M9.0,15.2 C9.0,17.0 10.2,18.2 11.8,18.4"/>
+        </g>
+        <text x="22" y="111.6" fill="#3C4763" font-family="Montserrat, sans-serif" font-size="3.2" font-weight="500">High Absorbency</text>
+        <g transform="translate(9.7000 116.0000) scale(0.275000)" fill="none" stroke="#1F2C50" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" id="icon-disposable" data-name="icon-disposable">
+          <rect x="3.6" y="3.6" width="16.8" height="16.8" rx="3.2"/>
+          <path d="M9.0,9.0 C10.6,7.4 13.4,7.4 15.0,9.0 C16.6,10.6 16.6,13.4 15.0,15.0 C13.4,16.6 10.6,16.6 9.0,15.0"/>
+          <path d="M9.0,6.4 L9.0,9.4 L12.0,9.4"/>
+        </g>
+        <text x="22" y="120.4" fill="#3C4763" font-family="Montserrat, sans-serif" font-size="3.2" font-weight="500">Disposable</text>
+        <g transform="translate(9.7000 124.8000) scale(0.275000)" fill="none" stroke="#1F2C50" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" id="icon-professional" data-name="icon-professional">
+          <circle cx="12" cy="7.6" r="3.4"/>
+          <path d="M5.4,20.6 C5.4,16.4 8.4,13.6 12,13.6 C15.6,13.6 18.6,16.4 18.6,20.6"/>
+        </g>
+        <text x="22" y="129.2" fill="#3C4763" font-family="Montserrat, sans-serif" font-size="3.2" font-weight="500">Professional Use</text>
+      </g>
+    </g>
+    <g id="04-FOLLOW-US" data-name="04-FOLLOW-US">
+      <g id="qr-code" data-name="qr-code">
+        <path d="M10,143 h3.1379 v0.4483 h-3.1379 Z M13.5862,143 h0.4483 v0.4483 h-0.4483 Z M14.931,143 h0.4483 v0.4483 h-0.4483 Z M15.8276,143 h0.8966 v0.4483 h-0.8966 Z M17.1724,143 h1.3448 v0.4483 h-1.3448 Z M19.8621,143 h3.1379 v0.4483 h-3.1379 Z M10,143.4483 h0.4483 v0.4483 h-0.4483 Z M12.6897,143.4483 h0.4483 v0.4483 h-0.4483 Z M14.0345,143.4483 h3.1379 v0.4483 h-3.1379 Z M18.069,143.4483 h1.3448 v0.4483 h-1.3448 Z M19.8621,143.4483 h0.4483 v0.4483 h-0.4483 Z M22.5517,143.4483 h0.4483 v0.4483 h-0.4483 Z M10,143.8966 h0.4483 v0.4483 h-0.4483 Z M10.8966,143.8966 h1.3448 v0.4483 h-1.3448 Z M12.6897,143.8966 h0.4483 v0.4483 h-0.4483 Z M14.4828,143.8966 h1.3448 v0.4483 h-1.3448 Z M16.2759,143.8966 h0.4483 v0.4483 h-0.4483 Z M17.6207,143.8966 h0.8966 v0.4483 h-0.8966 Z M18.9655,143.8966 h0.4483 v0.4483 h-0.4483 Z M19.8621,143.8966 h0.4483 v0.4483 h-0.4483 Z M20.7586,143.8966 h1.3448 v0.4483 h-1.3448 Z M22.5517,143.8966 h0.4483 v0.4483 h-0.4483 Z M10,144.3448 h0.4483 v0.4483 h-0.4483 Z M10.8966,144.3448 h1.3448 v0.4483 h-1.3448 Z M12.6897,144.3448 h0.4483 v0.4483 h-0.4483 Z M13.5862,144.3448 h0.4483 v0.4483 h-0.4483 Z M14.4828,144.3448 h1.3448 v0.4483 h-1.3448 Z M18.069,144.3448 h0.4483 v0.4483 h-0.4483 Z M18.9655,144.3448 h0.4483 v0.4483 h-0.4483 Z M19.8621,144.3448 h0.4483 v0.4483 h-0.4483 Z M20.7586,144.3448 h1.3448 v0.4483 h-1.3448 Z M22.5517,144.3448 h0.4483 v0.4483 h-0.4483 Z M10,144.7931 h0.4483 v0.4483 h-0.4483 Z M10.8966,144.7931 h1.3448 v0.4483 h-1.3448 Z M12.6897,144.7931 h0.4483 v0.4483 h-0.4483 Z M13.5862,144.7931 h1.3448 v0.4483 h-1.3448 Z M15.3793,144.7931 h0.4483 v0.4483 h-0.4483 Z M19.8621,144.7931 h0.4483 v0.4483 h-0.4483 Z M20.7586,144.7931 h1.3448 v0.4483 h-1.3448 Z M22.5517,144.7931 h0.4483 v0.4483 h-0.4483 Z M10,145.2414 h0.4483 v0.4483 h-0.4483 Z M12.6897,145.2414 h0.4483 v0.4483 h-0.4483 Z M13.5862,145.2414 h0.4483 v0.4483 h-0.4483 Z M14.4828,145.2414 h1.3448 v0.4483 h-1.3448 Z M17.1724,145.2414 h1.7931 v0.4483 h-1.7931 Z M19.8621,145.2414 h0.4483 v0.4483 h-0.4483 Z M22.5517,145.2414 h0.4483 v0.4483 h-0.4483 Z M10,145.6897 h3.1379 v0.4483 h-3.1379 Z M13.5862,145.6897 h0.4483 v0.4483 h-0.4483 Z M14.4828,145.6897 h0.4483 v0.4483 h-0.4483 Z M15.3793,145.6897 h0.4483 v0.4483 h-0.4483 Z M16.2759,145.6897 h0.4483 v0.4483 h-0.4483 Z M17.1724,145.6897 h0.4483 v0.4483 h-0.4483 Z M18.069,145.6897 h0.4483 v0.4483 h-0.4483 Z M18.9655,145.6897 h0.4483 v0.4483 h-0.4483 Z M19.8621,145.6897 h3.1379 v0.4483 h-3.1379 Z M13.5862,146.1379 h0.8966 v0.4483 h-0.8966 Z M15.3793,146.1379 h0.8966 v0.4483 h-0.8966 Z M16.7241,146.1379 h1.7931 v0.4483 h-1.7931 Z M18.9655,146.1379 h0.4483 v0.4483 h-0.4483 Z M10,146.5862 h0.4483 v0.4483 h-0.4483 Z M11.7931,146.5862 h0.4483 v0.4483 h-0.4483 Z M12.6897,146.5862 h2.2414 v0.4483 h-2.2414 Z M15.8276,146.5862 h0.4483 v0.4483 h-0.4483 Z M17.6207,146.5862 h0.4483 v0.4483 h-0.4483 Z M18.9655,146.5862 h2.6897 v0.4483 h-2.6897 Z M22.5517,146.5862 h0.4483 v0.4483 h-0.4483 Z M11.3448,147.0345 h0.4483 v0.4483 h-0.4483 Z M12.2414,147.0345 h0.4483 v0.4483 h-0.4483 Z M13.1379,147.0345 h0.8966 v0.4483 h-0.8966 Z M14.4828,147.0345 h2.2414 v0.4483 h-2.2414 Z M17.1724,147.0345 h0.4483 v0.4483 h-0.4483 Z M18.9655,147.0345 h4.0345 v0.4483 h-4.0345 Z M10.8966,147.4828 h0.8966 v0.4483 h-0.8966 Z M12.2414,147.4828 h0.8966 v0.4483 h-0.8966 Z M14.0345,147.4828 h0.4483 v0.4483 h-0.4483 Z M14.931,147.4828 h0.8966 v0.4483 h-0.8966 Z M17.1724,147.4828 h0.4483 v0.4483 h-0.4483 Z M18.9655,147.4828 h2.2414 v0.4483 h-2.2414 Z M22.5517,147.4828 h0.4483 v0.4483 h-0.4483 Z M13.1379,147.931 h0.8966 v0.4483 h-0.8966 Z M14.4828,147.931 h0.8966 v0.4483 h-0.8966 Z M16.2759,147.931 h0.4483 v0.4483 h-0.4483 Z M17.6207,147.931 h1.3448 v0.4483 h-1.3448 Z M20.7586,147.931 h0.8966 v0.4483 h-0.8966 Z M22.1034,147.931 h0.8966 v0.4483 h-0.8966 Z M10.8966,148.3793 h0.4483 v0.4483 h-0.4483 Z M12.6897,148.3793 h0.4483 v0.4483 h-0.4483 Z M14.931,148.3793 h0.4483 v0.4483 h-0.4483 Z M15.8276,148.3793 h2.2414 v0.4483 h-2.2414 Z M18.9655,148.3793 h0.8966 v0.4483 h-0.8966 Z M22.1034,148.3793 h0.4483 v0.4483 h-0.4483 Z M10.4483,148.8276 h0.8966 v0.4483 h-0.8966 Z M12.2414,148.8276 h0.4483 v0.4483 h-0.4483 Z M14.0345,148.8276 h0.4483 v0.4483 h-0.4483 Z M19.8621,148.8276 h0.4483 v0.4483 h-0.4483 Z M20.7586,148.8276 h2.2414 v0.4483 h-2.2414 Z M10.4483,149.2759 h0.4483 v0.4483 h-0.4483 Z M11.3448,149.2759 h0.4483 v0.4483 h-0.4483 Z M12.6897,149.2759 h0.8966 v0.4483 h-0.8966 Z M14.0345,149.2759 h0.4483 v0.4483 h-0.4483 Z M14.931,149.2759 h2.2414 v0.4483 h-2.2414 Z M17.6207,149.2759 h0.8966 v0.4483 h-0.8966 Z M18.9655,149.2759 h0.8966 v0.4483 h-0.8966 Z M20.7586,149.2759 h1.3448 v0.4483 h-1.3448 Z M22.5517,149.2759 h0.4483 v0.4483 h-0.4483 Z M10,149.7241 h0.4483 v0.4483 h-0.4483 Z M10.8966,149.7241 h0.4483 v0.4483 h-0.4483 Z M11.7931,149.7241 h0.8966 v0.4483 h-0.8966 Z M13.1379,149.7241 h0.8966 v0.4483 h-0.8966 Z M14.4828,149.7241 h0.4483 v0.4483 h-0.4483 Z M15.8276,149.7241 h0.4483 v0.4483 h-0.4483 Z M16.7241,149.7241 h1.7931 v0.4483 h-1.7931 Z M19.4138,149.7241 h0.8966 v0.4483 h-0.8966 Z M22.1034,149.7241 h0.8966 v0.4483 h-0.8966 Z M10.4483,150.1724 h1.7931 v0.4483 h-1.7931 Z M12.6897,150.1724 h0.4483 v0.4483 h-0.4483 Z M14.931,150.1724 h0.4483 v0.4483 h-0.4483 Z M15.8276,150.1724 h0.4483 v0.4483 h-0.4483 Z M17.6207,150.1724 h0.4483 v0.4483 h-0.4483 Z M18.5172,150.1724 h1.3448 v0.4483 h-1.3448 Z M20.3103,150.1724 h0.4483 v0.4483 h-0.4483 Z M22.1034,150.1724 h0.4483 v0.4483 h-0.4483 Z M10,150.6207 h1.3448 v0.4483 h-1.3448 Z M11.7931,150.6207 h0.4483 v0.4483 h-0.4483 Z M13.1379,150.6207 h0.8966 v0.4483 h-0.8966 Z M14.931,150.6207 h1.7931 v0.4483 h-1.7931 Z M17.1724,150.6207 h0.4483 v0.4483 h-0.4483 Z M18.069,150.6207 h0.4483 v0.4483 h-0.4483 Z M19.8621,150.6207 h1.7931 v0.4483 h-1.7931 Z M22.1034,150.6207 h0.8966 v0.4483 h-0.8966 Z M10.8966,151.069 h0.4483 v0.4483 h-0.4483 Z M12.2414,151.069 h1.7931 v0.4483 h-1.7931 Z M15.3793,151.069 h0.4483 v0.4483 h-0.4483 Z M17.1724,151.069 h1.3448 v0.4483 h-1.3448 Z M19.4138,151.069 h0.8966 v0.4483 h-0.8966 Z M20.7586,151.069 h0.4483 v0.4483 h-0.4483 Z M21.6552,151.069 h0.4483 v0.4483 h-0.4483 Z M22.5517,151.069 h0.4483 v0.4483 h-0.4483 Z M10.8966,151.5172 h1.3448 v0.4483 h-1.3448 Z M13.1379,151.5172 h0.8966 v0.4483 h-0.8966 Z M14.4828,151.5172 h0.4483 v0.4483 h-0.4483 Z M16.2759,151.5172 h0.4483 v0.4483 h-0.4483 Z M17.6207,151.5172 h1.3448 v0.4483 h-1.3448 Z M19.8621,151.5172 h0.4483 v0.4483 h-0.4483 Z M22.1034,151.5172 h0.8966 v0.4483 h-0.8966 Z M10,151.9655 h1.3448 v0.4483 h-1.3448 Z M12.2414,151.9655 h0.8966 v0.4483 h-0.8966 Z M14.0345,151.9655 h1.3448 v0.4483 h-1.3448 Z M15.8276,151.9655 h1.3448 v0.4483 h-1.3448 Z M17.6207,151.9655 h4.0345 v0.4483 h-4.0345 Z M22.5517,151.9655 h0.4483 v0.4483 h-0.4483 Z M13.5862,152.4138 h1.7931 v0.4483 h-1.7931 Z M17.6207,152.4138 h0.8966 v0.4483 h-0.8966 Z M18.9655,152.4138 h0.4483 v0.4483 h-0.4483 Z M20.7586,152.4138 h0.4483 v0.4483 h-0.4483 Z M22.5517,152.4138 h0.4483 v0.4483 h-0.4483 Z M10,152.8621 h3.1379 v0.4483 h-3.1379 Z M13.5862,152.8621 h0.4483 v0.4483 h-0.4483 Z M14.4828,152.8621 h2.6897 v0.4483 h-2.6897 Z M18.069,152.8621 h1.3448 v0.4483 h-1.3448 Z M19.8621,152.8621 h0.4483 v0.4483 h-0.4483 Z M20.7586,152.8621 h1.3448 v0.4483 h-1.3448 Z M22.5517,152.8621 h0.4483 v0.4483 h-0.4483 Z M10,153.3103 h0.4483 v0.4483 h-0.4483 Z M12.6897,153.3103 h0.4483 v0.4483 h-0.4483 Z M14.0345,153.3103 h0.8966 v0.4483 h-0.8966 Z M15.3793,153.3103 h0.8966 v0.4483 h-0.8966 Z M16.7241,153.3103 h0.4483 v0.4483 h-0.4483 Z M17.6207,153.3103 h0.4483 v0.4483 h-0.4483 Z M18.5172,153.3103 h0.8966 v0.4483 h-0.8966 Z M20.7586,153.3103 h0.4483 v0.4483 h-0.4483 Z M10,153.7586 h0.4483 v0.4483 h-0.4483 Z M10.8966,153.7586 h1.3448 v0.4483 h-1.3448 Z M12.6897,153.7586 h0.4483 v0.4483 h-0.4483 Z M13.5862,153.7586 h0.4483 v0.4483 h-0.4483 Z M14.4828,153.7586 h0.8966 v0.4483 h-0.8966 Z M15.8276,153.7586 h0.4483 v0.4483 h-0.4483 Z M16.7241,153.7586 h0.4483 v0.4483 h-0.4483 Z M17.6207,153.7586 h0.4483 v0.4483 h-0.4483 Z M18.5172,153.7586 h3.1379 v0.4483 h-3.1379 Z M22.1034,153.7586 h0.8966 v0.4483 h-0.8966 Z M10,154.2069 h0.4483 v0.4483 h-0.4483 Z M10.8966,154.2069 h1.3448 v0.4483 h-1.3448 Z M12.6897,154.2069 h0.4483 v0.4483 h-0.4483 Z M14.4828,154.2069 h1.3448 v0.4483 h-1.3448 Z M16.2759,154.2069 h1.3448 v0.4483 h-1.3448 Z M18.069,154.2069 h0.4483 v0.4483 h-0.4483 Z M18.9655,154.2069 h0.8966 v0.4483 h-0.8966 Z M20.3103,154.2069 h0.4483 v0.4483 h-0.4483 Z M22.1034,154.2069 h0.4483 v0.4483 h-0.4483 Z M10,154.6552 h0.4483 v0.4483 h-0.4483 Z M10.8966,154.6552 h1.3448 v0.4483 h-1.3448 Z M12.6897,154.6552 h0.4483 v0.4483 h-0.4483 Z M14.4828,154.6552 h0.4483 v0.4483 h-0.4483 Z M16.2759,154.6552 h0.8966 v0.4483 h-0.8966 Z M21.2069,154.6552 h1.7931 v0.4483 h-1.7931 Z M10,155.1034 h0.4483 v0.4483 h-0.4483 Z M12.6897,155.1034 h0.4483 v0.4483 h-0.4483 Z M14.4828,155.1034 h0.4483 v0.4483 h-0.4483 Z M15.3793,155.1034 h1.3448 v0.4483 h-1.3448 Z M17.6207,155.1034 h0.8966 v0.4483 h-0.8966 Z M18.9655,155.1034 h1.3448 v0.4483 h-1.3448 Z M20.7586,155.1034 h0.8966 v0.4483 h-0.8966 Z M22.1034,155.1034 h0.8966 v0.4483 h-0.8966 Z M10,155.5517 h3.1379 v0.4483 h-3.1379 Z M13.5862,155.5517 h0.4483 v0.4483 h-0.4483 Z M14.931,155.5517 h1.3448 v0.4483 h-1.3448 Z M16.7241,155.5517 h0.4483 v0.4483 h-0.4483 Z M17.6207,155.5517 h0.4483 v0.4483 h-0.4483 Z M18.9655,155.5517 h0.4483 v0.4483 h-0.4483 Z M20.3103,155.5517 h0.8966 v0.4483 h-0.8966 Z M22.1034,155.5517 h0.4483 v0.4483 h-0.4483 Z" fill="#16203F" shape-rendering="crispEdges"/>
+      </g>
+      <text x="25.6" y="146.6" fill="#3C4763" font-family="Montserrat, sans-serif" font-size="3.1" font-weight="600">Follow Us</text>
+      <g transform="translate(24.9000 148.9000) scale(0.175000)" fill="none" stroke="#3C4763" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="icon-instagram" data-name="icon-instagram">
+        <rect x="3.4" y="3.4" width="17.2" height="17.2" rx="5"/>
+        <circle cx="12" cy="12" r="4.1"/>
+        <circle cx="17" cy="7.1" r="1.15" fill="#3C4763" stroke="none"/>
+      </g>
+      <text x="30" y="152.1" fill="#3C4763" font-family="Montserrat, sans-serif" font-size="3" font-weight="500">@shaparak.tissue</text>
+      <text x="25.6" y="156.8" fill="#3C4763" font-family="Montserrat, sans-serif" font-size="3" font-weight="500">www.shaparak-tissue.com</text>
+    </g>
+    <g id="05-SUITABLE-FOR" data-name="05-SUITABLE-FOR">
+      <g id="suitable-for" data-name="suitable-for">
+        <g>
+          <text x="112" y="26" fill="#1F2C50" font-family="Montserrat, sans-serif" font-size="4.2" font-weight="600" letter-spacing="0.5" text-anchor="middle">SUITABLE FOR</text>
+          <line x1="83.5" y1="24.572" x2="90.9719" y2="24.572" stroke="#BE8C3C" stroke-width="0.3" stroke-linecap="round"/>
+          <line x1="133.0281" y1="24.572" x2="140.5" y2="24.572" stroke="#BE8C3C" stroke-width="0.3" stroke-linecap="round"/>
+        </g>
+        <g transform="translate(84.1000 30.8000) scale(0.291667)" fill="none" stroke="#1F2C50" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round" id="icon-scissors" data-name="icon-scissors">
+          <line x1="9.4" y1="18.4" x2="16.6" y2="4.2"/>
+          <line x1="14.6" y1="18.4" x2="7.4" y2="4.2"/>
+          <circle cx="8.6" cy="20" r="2.1"/>
+          <circle cx="15.4" cy="20" r="2.1"/>
+          <circle cx="12" cy="12.3" r="0.9" fill="#1F2C50" stroke="none"/>
+        </g>
+        <text x="97" y="35.4" fill="#3C4763" font-family="Montserrat, sans-serif" font-size="3.2" font-weight="500" letter-spacing="0.22">BARBERSHOP</text>
+        <g transform="translate(84.1000 38.9000) scale(0.291667)" fill="none" stroke="#1F2C50" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round" id="icon-salon" data-name="icon-salon">
+          <circle cx="12" cy="10.6" r="5.4"/>
+          <path d="M6.4,9.8 C6.4,5.2 8.8,2.8 12,2.8 C15.2,2.8 17.6,5.2 17.6,9.8"/>
+          <path d="M6.5,9.0 C5.3,12.8 5.0,17.4 5.6,20.8"/>
+          <path d="M17.5,9.0 C18.7,12.8 19.0,17.4 18.4,20.8"/>
+          <circle cx="10.2" cy="10.2" r="0.8" fill="#1F2C50" stroke="none"/>
+          <circle cx="13.8" cy="10.2" r="0.8" fill="#1F2C50" stroke="none"/>
+          <path d="M10.6,13.0 C11.4,13.8 12.6,13.8 13.4,13.0"/>
+        </g>
+        <text x="97" y="43.5" fill="#3C4763" font-family="Montserrat, sans-serif" font-size="3.2" font-weight="500" letter-spacing="0.22">BEAUTY SALON</text>
+        <g transform="translate(84.1000 47.0000) scale(0.291667)" fill="none" stroke="#1F2C50" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round" id="icon-paw" data-name="icon-paw">
+          <ellipse cx="7.3" cy="9.9" rx="2.3" ry="2.9" fill="#1F2C50" stroke="none"/>
+          <ellipse cx="11.5" cy="7.6" rx="2.4" ry="3.1" fill="#1F2C50" stroke="none"/>
+          <ellipse cx="15.9" cy="8.8" rx="2.3" ry="2.9" fill="#1F2C50" stroke="none"/>
+          <ellipse cx="19.2" cy="12.6" rx="2" ry="2.5" fill="#1F2C50" stroke="none"/>
+          <path d="M12.1,12.2 C15.0,12.2 17.6,14.5 17.6,17.1 C17.6,19.4 15.8,20.8 13.6,20.4 C12.6,20.2 11.6,20.2 10.6,20.4 C8.4,20.8 6.6,19.4 6.6,17.1 C6.6,14.5 9.2,12.2 12.1,12.2 Z" fill="#1F2C50" stroke="none"/>
+        </g>
+        <text x="97" y="51.6" fill="#3C4763" font-family="Montserrat, sans-serif" font-size="3.2" font-weight="500" letter-spacing="0.22">PET SHOP</text>
+        <g transform="translate(84.1000 55.1000) scale(0.291667)" fill="none" stroke="#1F2C50" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round" id="icon-dumbbell" data-name="icon-dumbbell">
+          <line x1="8.4" y1="12" x2="15.6" y2="12"/>
+          <line x1="6.2" y1="8.6" x2="6.2" y2="15.4"/>
+          <line x1="17.8" y1="8.6" x2="17.8" y2="15.4"/>
+          <line x1="3.4" y1="10.1" x2="3.4" y2="13.9"/>
+          <line x1="20.6" y1="10.1" x2="20.6" y2="13.9"/>
+          <line x1="8.6" y1="9.6" x2="8.6" y2="14.4"/>
+          <line x1="15.4" y1="9.6" x2="15.4" y2="14.4"/>
+        </g>
+        <text x="97" y="59.7" fill="#3C4763" font-family="Montserrat, sans-serif" font-size="3.2" font-weight="500" letter-spacing="0.22">GYM</text>
+        <g transform="translate(84.1000 63.2000) scale(0.291667)" fill="none" stroke="#1F2C50" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round" id="icon-pool" data-name="icon-pool">
+          <circle cx="9.6" cy="7.4" r="1.9" fill="#1F2C50" stroke="none"/>
+          <path d="M12.4, 6.2 L17.6,9.0"/>
+          <path d="M3.4,12.4 C6.0,10.6 8.8,10.8 11.6,11.8 C14.2,12.7 16.6,12.6 18.8,11.2"/>
+          <path d="M2.2,16.4 C4.1,14.7 6.0,14.7 7.9,16.4 C9.8,18.1 11.7,18.1 13.6,16.4 C15.5,14.7 17.4,14.7 19.3,16.4 C20.2,17.2 21.0,17.5 21.8,17.4"/>
+          <path d="M2.2,20.2 C4.1,18.5 6.0,18.5 7.9,20.2 C9.8,21.9 11.7,21.9 13.6,20.2 C15.5,18.5 17.4,18.5 19.3,20.2 C20.2,21.0 21.0,21.3 21.8,21.2"/>
+        </g>
+        <text x="97" y="67.8" fill="#3C4763" font-family="Montserrat, sans-serif" font-size="3.2" font-weight="500" letter-spacing="0.22">POOL</text>
+        <g transform="translate(84.1000 71.3000) scale(0.291667)" fill="none" stroke="#1F2C50" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round" id="icon-hotel" data-name="icon-hotel">
+          <path d="M5.6,21.0 L5.6,5.2 C5.6,4.5 6.1,4.0 6.8,4.0 L14.2,4.0 C14.9,4.0 15.4,4.5 15.4,5.2 L15.4,21.0"/>
+          <path d="M15.4,21.0 L15.4,10.6 L18.6,10.6 C19.2,10.6 19.6,11.0 19.6,11.6 L19.6,21.0"/>
+          <line x1="3.6" y1="21" x2="21" y2="21"/>
+          <rect x="7.4" y="8.2" width="1.6" height="1.9" fill="#1F2C50" stroke="none"/>
+          <rect x="10" y="8.2" width="1.6" height="1.9" fill="#1F2C50" stroke="none"/>
+          <rect x="12.6" y="8.2" width="1.6" height="1.9" fill="#1F2C50" stroke="none"/>
+          <rect x="7.4" y="11" width="1.6" height="1.9" fill="#1F2C50" stroke="none"/>
+          <rect x="10" y="11" width="1.6" height="1.9" fill="#1F2C50" stroke="none"/>
+          <rect x="12.6" y="11" width="1.6" height="1.9" fill="#1F2C50" stroke="none"/>
+          <rect x="7.4" y="13.8" width="1.6" height="1.9" fill="#1F2C50" stroke="none"/>
+          <rect x="10" y="13.8" width="1.6" height="1.9" fill="#1F2C50" stroke="none"/>
+          <rect x="12.6" y="13.8" width="1.6" height="1.9" fill="#1F2C50" stroke="none"/>
+          <rect x="16.6" y="13" width="1.5" height="1.8" fill="#1F2C50" stroke="none"/>
+          <rect x="16.6" y="16.2" width="1.5" height="1.8" fill="#1F2C50" stroke="none"/>
+          <path d="M10.0,21.0 L10.0,17.4 C10.0,16.8 10.5,16.3 11.1,16.3 C11.7,16.3 12.2,16.8 12.2,17.4 L12.2,21.0"/>
+        </g>
+        <text x="97" y="75.9" fill="#3C4763" font-family="Montserrat, sans-serif" font-size="3.2" font-weight="500" letter-spacing="0.22">HOTEL</text>
+        <g transform="translate(84.1000 79.4000) scale(0.291667)" fill="none" stroke="#1F2C50" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round" id="icon-plane" data-name="icon-plane">
+          <g transform="rotate(42 12 12)">
+            <path d="M12,2.2 C13.1,2.2 14,3.3 14,4.7 L14,9.4 L21.6,13.9 L21.6,16.1 L14,13.8 L14,18.3 L16.7,20.2 L16.7,21.8 L12,20.5 L7.3,21.8 L7.3,20.2 L10,18.3 L10,13.8 L2.4,16.1 L2.4,13.9 L10,9.4 L10,4.7 C10,3.3 10.9,2.2 12,2.2 Z" fill="#1F2C50" stroke="none"/>
+          </g>
+        </g>
+        <text x="97" y="84" fill="#3C4763" font-family="Montserrat, sans-serif" font-size="3.2" font-weight="500" letter-spacing="0.22">TRAVEL</text>
+      </g>
+      <g id="viscose" data-name="viscose">
+        <line x1="84" y1="95.4" x2="141" y2="95.4" stroke="#BE8C3C" stroke-width="0.32" stroke-linecap="round"/>
+        <text x="112" y="101.6" fill="#1F2C50" font-family="Montserrat, sans-serif" font-size="4.2" font-weight="600" letter-spacing="0.5" text-anchor="middle">100% VISCOSE</text>
+        <line x1="84" y1="105" x2="141" y2="105" stroke="#BE8C3C" stroke-width="0.32" stroke-linecap="round"/>
+        <g transform="translate(83.9000 108.5000) scale(0.308333)" fill="none" stroke="#1F2C50" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" id="icon-leaf" data-name="icon-leaf">
+          <path d="M20.4,3.8 C20.4,12.4 14.6,18.6 5.4,19.4 C3.8,11.2 9.6,4.2 20.4,3.8 Z"/>
+          <path d="M4.0,21.0 C6.6,16.0 10.8,11.4 16.4,8.2"/>
+        </g>
+        <text x="97" y="113.4" fill="#3C4763" font-family="Montserrat, sans-serif" font-size="3.2" font-weight="500" letter-spacing="0.22">NATURAL FIBER</text>
+        <g transform="translate(83.9000 117.9000) scale(0.308333)" fill="none" stroke="#1F2C50" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" id="icon-cotton" data-name="icon-cotton">
+          <path d="M12,6.2 C9.6,6.2 8.0,8.0 8.0,10.2 C6.0,10.2 4.4,11.5 4.4,13.3 C4.4,15.2 6.2,16.4 8.2,16.4 L15.8,16.4 C17.8,16.4 19.6,15.2 19.6,13.3 C19.6,11.5 18.0,10.2 16.0,10.2 C16.0,8.0 14.4,6.2 12,6.2 Z"/>
+          <line x1="12" y1="16.4" x2="12" y2="21"/>
+          <path d="M12,19.4 C10.6,19.4 9.2,18.6 8.4,17.2"/>
+          <path d="M12,19.4 C13.4,19.4 14.8,18.6 15.6,17.2"/>
+        </g>
+        <text x="97" y="122.8" fill="#3C4763" font-family="Montserrat, sans-serif" font-size="3.2" font-weight="500" letter-spacing="0.22">EXTRA SOFT</text>
+      </g>
+      <g id="made-in-iran" data-name="made-in-iran">
+        <line x1="84" y1="128.6" x2="141" y2="128.6" stroke="#BE8C3C" stroke-width="0.32" stroke-linecap="round"/>
+        <text x="112" y="134.4" fill="#16203F" font-family="Montserrat, sans-serif" font-size="3.6" font-weight="600" letter-spacing="0.55" text-anchor="middle">MADE IN IRAN</text>
+      </g>
+    </g>
+    <g id="06-CERTIFICATION-MARKS" data-name="06-CERTIFICATION-MARKS">
+      <g id="mark-iran-standard" data-name="mark-iran-standard">
+        <circle cx="93" cy="142.4" r="4.1" fill="none" stroke="#16203F" stroke-width="0.451"/>
+        <circle cx="93" cy="142.4" r="3.362" fill="none" stroke="#16203F" stroke-width="0.205"/>
+        <text x="93" y="142.482" fill="#16203F" font-family="Vazirmatn, sans-serif" font-size="1.476" font-weight="700" text-anchor="middle" direction="rtl" unicode-bidi="embed">استاندارد</text>
+        <text x="93" y="144.45" fill="#16203F" font-family="Vazirmatn, sans-serif" font-size="1.312" font-weight="400" text-anchor="middle" direction="rtl" unicode-bidi="embed">ایران</text>
+      </g>
+      <g id="mark-iso" data-name="mark-iso">
+        <ellipse cx="111" cy="143" rx="4.48" ry="4" fill="none" stroke="#16203F" stroke-width="0.44"/>
+        <text x="111" y="142.84" fill="#16203F" font-family="Montserrat, sans-serif" font-size="2.88" font-weight="700" text-anchor="middle">ISO</text>
+        <text x="111" y="145.48" fill="#16203F" font-family="Montserrat, sans-serif" font-size="2.48" font-weight="500" text-anchor="middle">9001</text>
+      </g>
+      <g transform="translate(124.7000 137.7000) scale(0.441667)" fill="none" stroke="#1A1A1A" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" id="icon-recycle" data-name="icon-recycle">
+        <path d="M13.93,5.27 A7.0,7.0 0 0 1 18.93,11.03"/>
+        <path d="M18.79,13.69 L21.61,10.65 L16.26,11.40 Z" fill="#1A1A1A" stroke="none"/>
+        <path d="M16.86,17.04 A7.0,7.0 0 0 1 9.38,18.49"/>
+        <path d="M7.14,17.04 L8.37,20.99 L10.39,15.99 Z" fill="#1A1A1A" stroke="none"/>
+        <path d="M5.21,13.69 A7.0,7.0 0 0 1 7.69,6.48"/>
+        <path d="M10.07,5.27 L6.03,4.36 L9.35,8.61 Z" fill="#1A1A1A" stroke="none"/>
+      </g>
+    </g>
+    <g id="07-BARCODE" data-name="07-BARCODE">
+      <g id="barcode-ean13" data-name="barcode-ean13">
+        <rect x="99.1579" y="149.5789" width="44.6316" height="15.2421" fill="#FFFFFF"/>
+        <g fill="#1A1A1A" id="barcode-bars" data-name="barcode-bars">
+          <rect x="100" y="150" width="0.4211" height="12.4901"/>
+          <rect x="100.8421" y="150" width="0.4211" height="12.4901"/>
+          <rect x="102.1053" y="150" width="0.4211" height="10.6105"/>
+          <rect x="103.3684" y="150" width="0.4211" height="10.6105"/>
+          <rect x="103.7895" y="150" width="0.4211" height="10.6105"/>
+          <rect x="105.8947" y="150" width="0.4211" height="10.6105"/>
+          <rect x="106.7368" y="150" width="0.4211" height="10.6105"/>
+          <rect x="107.5789" y="150" width="0.4211" height="10.6105"/>
+          <rect x="108" y="150" width="0.4211" height="10.6105"/>
+          <rect x="109.2632" y="150" width="0.4211" height="10.6105"/>
+          <rect x="109.6842" y="150" width="0.4211" height="10.6105"/>
+          <rect x="110.9474" y="150" width="0.4211" height="10.6105"/>
+          <rect x="111.3684" y="150" width="0.4211" height="10.6105"/>
+          <rect x="112.2105" y="150" width="0.4211" height="10.6105"/>
+          <rect x="112.6316" y="150" width="0.4211" height="10.6105"/>
+          <rect x="113.4737" y="150" width="0.4211" height="10.6105"/>
+          <rect x="113.8947" y="150" width="0.4211" height="10.6105"/>
+          <rect x="114.3158" y="150" width="0.4211" height="10.6105"/>
+          <rect x="114.7368" y="150" width="0.4211" height="10.6105"/>
+          <rect x="115.5789" y="150" width="0.4211" height="10.6105"/>
+          <rect x="116.4211" y="150" width="0.4211" height="10.6105"/>
+          <rect x="118.1053" y="150" width="0.4211" height="10.6105"/>
+          <rect x="118.5263" y="150" width="0.4211" height="10.6105"/>
+          <rect x="119.3684" y="150" width="0.4211" height="12.4901"/>
+          <rect x="120.2105" y="150" width="0.4211" height="12.4901"/>
+          <rect x="121.0526" y="150" width="0.4211" height="10.6105"/>
+          <rect x="122.3158" y="150" width="0.4211" height="10.6105"/>
+          <rect x="122.7368" y="150" width="0.4211" height="10.6105"/>
+          <rect x="123.1579" y="150" width="0.4211" height="10.6105"/>
+          <rect x="124" y="150" width="0.4211" height="10.6105"/>
+          <rect x="124.8421" y="150" width="0.4211" height="10.6105"/>
+          <rect x="126.9474" y="150" width="0.4211" height="10.6105"/>
+          <rect x="128.6316" y="150" width="0.4211" height="10.6105"/>
+          <rect x="129.8947" y="150" width="0.4211" height="10.6105"/>
+          <rect x="131.1579" y="150" width="0.4211" height="10.6105"/>
+          <rect x="132.8421" y="150" width="0.4211" height="10.6105"/>
+          <rect x="133.2632" y="150" width="0.4211" height="10.6105"/>
+          <rect x="133.6842" y="150" width="0.4211" height="10.6105"/>
+          <rect x="134.5263" y="150" width="0.4211" height="10.6105"/>
+          <rect x="135.7895" y="150" width="0.4211" height="10.6105"/>
+          <rect x="137.4737" y="150" width="0.4211" height="10.6105"/>
+          <rect x="138.7368" y="150" width="0.4211" height="12.4901"/>
+          <rect x="139.5789" y="150" width="0.4211" height="12.4901"/>
+        </g>
+        <text x="99.4105" y="162.7933" fill="#1A1A1A" font-family="Montserrat, sans-serif" font-size="3.0316" font-weight="500">6</text>
+        <text x="110.1053" y="162.7933" fill="#1A1A1A" font-family="Montserrat, sans-serif" font-size="3.0316" font-weight="500" letter-spacing="0.0842" text-anchor="middle">2 6 1 2 3 4</text>
+        <text x="129.8947" y="162.7933" fill="#1A1A1A" font-family="Montserrat, sans-serif" font-size="3.0316" font-weight="500" letter-spacing="0.0842" text-anchor="middle">5 6 7 8 9 7</text>
+      </g>
+    </g>
+    <g style="display:none" id="ZZ-GUIDES-do-not-print" data-name="ZZ-GUIDES-do-not-print">
+      <rect x="0" y="0" width="150" height="170" fill="none" stroke="#FF00FF" stroke-width="0.25" stroke-dasharray="2 1.5"/>
+      <rect x="6" y="6" width="138" height="158" fill="none" stroke="#00A0FF" stroke-width="0.25" stroke-dasharray="2 1.5"/>
+      <rect x="-3" y="-3" width="156" height="176" fill="none" stroke="#FF7A00" stroke-width="0.25" stroke-dasharray="3 2"/>
+    </g>
+  </g>
+</svg>

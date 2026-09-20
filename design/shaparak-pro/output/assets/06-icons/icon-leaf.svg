@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="20mm" height="20mm" viewBox="0 0 20 20">
+  <title>Shaparak Pro - leaf icon</title>
+  <desc>آیکن leaf - 20.0 x 20.0 mm, text converted to curves.</desc>
+  <g transform="translate(-0.1250 -0.2500)" id="ICON-LEAF" data-name="ICON-LEAF">
+    <g id="icon-leaf" data-name="icon-leaf">
+      <g transform="translate(2.5000 2.5000) scale(0.625000)" fill="none" stroke="#16203F" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round" id="icon-leaf" data-name="icon-leaf">
+        <path d="M20.4,3.8 C20.4,12.4 14.6,18.6 5.4,19.4 C3.8,11.2 9.6,4.2 20.4,3.8 Z"/>
+        <path d="M4.0,21.0 C6.6,16.0 10.8,11.4 16.4,8.2"/>
+      </g>
+    </g>
+  </g>
+</svg>

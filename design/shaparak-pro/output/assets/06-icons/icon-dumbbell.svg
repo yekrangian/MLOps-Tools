@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="20mm" height="20mm" viewBox="0 0 20 20">
+  <title>Shaparak Pro - dumbbell icon</title>
+  <desc>آیکن dumbbell - 20.0 x 20.0 mm, text converted to curves.</desc>
+  <g transform="translate(-0.0000 -0.0000)" id="ICON-DUMBBELL" data-name="ICON-DUMBBELL">
+    <g id="icon-dumbbell" data-name="icon-dumbbell">
+      <g transform="translate(2.5000 2.5000) scale(0.625000)" fill="none" stroke="#16203F" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round" id="icon-dumbbell" data-name="icon-dumbbell">
+        <line x1="8.4" y1="12" x2="15.6" y2="12"/>
+        <line x1="6.2" y1="8.6" x2="6.2" y2="15.4"/>
+        <line x1="17.8" y1="8.6" x2="17.8" y2="15.4"/>
+        <line x1="3.4" y1="10.1" x2="3.4" y2="13.9"/>
+        <line x1="20.6" y1="10.1" x2="20.6" y2="13.9"/>
+        <line x1="8.6" y1="9.6" x2="8.6" y2="14.4"/>
+        <line x1="15.4" y1="9.6" x2="15.4" y2="14.4"/>
+      </g>
+    </g>
+  </g>
+</svg>

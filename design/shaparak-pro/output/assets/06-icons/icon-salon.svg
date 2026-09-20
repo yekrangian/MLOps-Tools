@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="20mm" height="20mm" viewBox="0 0 20 20">
+  <title>Shaparak Pro - salon icon</title>
+  <desc>آیکن salon - 20.0 x 20.0 mm, text converted to curves.</desc>
+  <g transform="translate(-0.0000 0.1250)" id="ICON-SALON" data-name="ICON-SALON">
+    <g id="icon-salon" data-name="icon-salon">
+      <g transform="translate(2.5000 2.5000) scale(0.625000)" fill="none" stroke="#16203F" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round" id="icon-salon" data-name="icon-salon">
+        <circle cx="12" cy="10.6" r="5.4"/>
+        <path d="M6.4,9.8 C6.4,5.2 8.8,2.8 12,2.8 C15.2,2.8 17.6,5.2 17.6,9.8"/>
+        <path d="M6.5,9.0 C5.3,12.8 5.0,17.4 5.6,20.8"/>
+        <path d="M17.5,9.0 C18.7,12.8 19.0,17.4 18.4,20.8"/>
+        <circle cx="10.2" cy="10.2" r="0.8" fill="#16203F" stroke="none"/>
+        <circle cx="13.8" cy="10.2" r="0.8" fill="#16203F" stroke="none"/>
+        <path d="M10.6,13.0 C11.4,13.8 12.6,13.8 13.4,13.0"/>
+      </g>
+    </g>
+  </g>
+</svg>
