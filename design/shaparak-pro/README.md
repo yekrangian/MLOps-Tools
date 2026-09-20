@@ -8,9 +8,9 @@ A vector rebuild of the Shaparak Pro disposable-towel pouch in the two requested
 colour ways, front and back. Everything – butterfly, icons, barcode, QR code and
 type – is vector and editable in Illustrator; no raster images are embedded.
 
-> اگر این فایل‌ها را به طراح می‌دهید، `HANDOVER.md` را هم بفرستید: یک صفحه‌ی فارسی
-> که فقط می‌گوید کدام فایل را باز کند، با فونت و لایه‌ها چه کند و قبل از چاپ چه چیزی
-> را عوض کند.
+> **برای فرستادن به طراح:** فایل `shaparak-pro-artwork.zip` (حدود ۱۲ مگابایت) همه‌چیزِ
+> لازم را یکجا دارد – راهنمای فارسی، فهرست تصویری، ۹۳ آیتم جدا، پنل‌های کامل و
+> فونت‌ها. همین یک فایل را بفرستید. با `python pack.py` دوباره ساخته می‌شود.
 
 ---
 
