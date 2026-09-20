@@ -227,7 +227,77 @@ def asset_files(png_dpi: int = 200) -> list[Path]:
     cairosvg.svg2png(bytestring=svg_bytes, write_to=str(root / "00-INDEX.png"), dpi=110,
                      background_color="#FFFFFF")
     written.append(index)
+
+    every = root / "00-ALL-ITEMS.svg"
+    doc, layers = all_items_document(thumbs)
+    doc.save(every)
+    (root / "00-ALL-ITEMS.ai").write_text(
+        ai_export.layered_ai(doc, layers, "Shaparak Pro - all items"), encoding="utf-8"
+    )
+    (root / "00-ALL-ITEMS.eps").write_text(
+        ai_export.layered_ai(doc, layers, "Shaparak Pro - all items", eps=True), encoding="utf-8"
+    )
+    cairosvg.svg2pdf(bytestring=every.read_bytes(), write_to=str(root / "00-ALL-ITEMS.pdf"))
+    written.append(every)
     return written
+
+
+def all_items_document(
+    thumbs: list[tuple[assets.Asset, Document, str]],
+) -> tuple[Document, list[tuple[str, Node]]]:
+    """One artboard holding every item at 1:1, each on its own named layer."""
+    sheet_w, gap, label_h, margin, min_cell = 620.0, 8.0, 7.0, 14.0, 30.0
+    cells = [(entry, max(entry[1].width, min_cell)) for entry in thumbs]
+    rows: list[list[tuple[tuple, float]]] = [[]]
+    x = margin
+    for cell in cells:
+        if rows[-1] and x + cell[1] > sheet_w - margin:
+            rows.append([])
+            x = margin
+        rows[-1].append(cell)
+        x += cell[1] + gap
+
+    positions: list[tuple[assets.Asset, Document, str, float, float, float]] = []
+    y = margin + 14.0
+    for row in rows:
+        x = margin
+        height = max(item[0][1].height for item in row)
+        for (asset, art_doc, relative), cell_w in row:
+            positions.append((asset, art_doc, relative,
+                              x + (cell_w - art_doc.width) / 2,
+                              y + (height - art_doc.height) / 2,
+                              cell_w))
+            x += cell_w + gap
+        y += height + label_h + gap
+    height = y - gap + margin
+
+    doc = Document(sheet_w, height, title="Shaparak Pro - all items at 1:1",
+                   desc="Every separated item on one artboard, one layer each, real size.")
+    doc.add(rect(0, 0, sheet_w, height, fill="#FFFFFF"))
+    doc.add(
+        group("00-SHEET-TITLE").add(
+            tp.text("SHAPARAK PRO - ALL ARTWORK ITEMS, ACTUAL SIZE", margin, margin + 6,
+                    tp.Style(size=5.0, weight="bold", fill=theme.NAVY_TEXT, tracking=0.5))
+        )
+    )
+
+    labels = group("00-LABELS-delete-before-print")
+    layers: list[tuple[str, Node]] = []
+    for asset, art_doc, relative, ox, oy, cell_w in positions:
+        layer = group(relative.upper(), transform=f"translate({ox:.3f} {oy:.3f})")
+        layer.add(*art_doc.root_children)
+        layers.append((relative.upper(), layer))
+        centre = ox + art_doc.width / 2
+        label_style = tp.Style(size=2.3, weight="medium", fill=theme.INK_SOFT, anchor="middle")
+        labels.add(
+            tp.text(relative, centre, oy + art_doc.height + 4.2,
+                    tp.fit(relative, label_style, cell_w, min_size=1.9))
+        )
+    for _, layer in layers:
+        doc.add(layer)
+    doc.add(labels)
+    layers.append(("00-LABELS-delete-before-print", labels))
+    return doc, layers
 
 
 def index_document(thumbs: list[tuple[assets.Asset, Document, str]]) -> Document:
