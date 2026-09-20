@@ -55,21 +55,10 @@ class ColourWay:
     on_primary: str = WHITE
 
 
-TURQUOISE = ColourWay(
-    key="v1-turquoise",
-    name_fa="نسخه ۱ – فیروزه‌ای",
-    name_en="Version 1 - Turquoise",
-    primary="#5BB2AD",
-    primary_dark="#3F9A95",
-    primary_light="#8CCBC7",
-    accent="#3F9A95",
-    badge="#4DABA8",
-)
-
 NAVY = ColourWay(
-    key="v2-navy",
-    name_fa="نسخه ۲ – سرمه‌ای",
-    name_en="Version 2 - Navy",
+    key="navy",
+    name_fa="سرمه‌ای",
+    name_en="Navy",
     primary="#1F2C50",
     primary_dark="#16203F",
     primary_light="#40507B",
@@ -77,7 +66,9 @@ NAVY = ColourWay(
     badge="#22325A",
 )
 
-COLOURWAYS = (TURQUOISE, NAVY)
+# Only the navy pack is produced. The generator still loops over this tuple, so
+# a second colour way is one entry away.
+COLOURWAYS = (NAVY,)
 
 # --- pouch geometry --------------------------------------------------------
 
@@ -107,15 +98,15 @@ TITLE_AR = "منشفة للاستعمال الواحد"
 VISCOSE_BADGE = ("100%", "VISCOSE")
 EXTRA_SOFT = ("EXTRA SOFT", "NATURAL FIBER")
 
-# icon key, Persian label (front strip), English label (back panel)
+# icon key, English label. Every icon on the pack is labelled in English only.
 USAGES = (
-    ("scissors", "آرایشگاه", "BARBERSHOP"),
-    ("salon", "سالن زیبایی", "BEAUTY SALON"),
-    ("paw", "پت شاپ", "PET SHOP"),
-    ("dumbbell", "باشگاه", "GYM"),
-    ("pool", "استخر", "POOL"),
-    ("hotel", "هتل", "HOTEL"),
-    ("plane", "سفر", "TRAVEL"),
+    ("scissors", "BARBERSHOP"),
+    ("salon", "BEAUTY SALON"),
+    ("paw", "PET SHOP"),
+    ("dumbbell", "GYM"),
+    ("pool", "POOL"),
+    ("hotel", "HOTEL"),
+    ("plane", "TRAVEL"),
 )
 
 SIZES_TITLE_FA = "سایزهای موجود"
@@ -132,15 +123,14 @@ BACK_PARAGRAPH = (
 )
 
 FEATURES_TITLE_EN = "FEATURES"
-FEATURES_TITLE_FA = "ویژگی‌ها"
 
-# icon key, English feature, Persian feature
+# icon key, English feature
 FEATURES = (
-    ("hygienic", "Hygienic & Clean", "بهداشتی و تمیز"),
-    ("soft", "Soft & Comfortable", "نرم و لطیف"),
-    ("absorbent", "High Absorbency", "جذب بالا"),
-    ("disposable", "Disposable", "یکبار مصرف"),
-    ("professional", "Professional Use", "مناسب استفاده حرفه‌ای"),
+    ("hygienic", "Hygienic & Clean"),
+    ("soft", "Soft & Comfortable"),
+    ("absorbent", "High Absorbency"),
+    ("disposable", "Disposable"),
+    ("professional", "Professional Use"),
 )
 
 SUITABLE_TITLE = "SUITABLE FOR"

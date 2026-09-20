@@ -122,19 +122,27 @@ def butterfly_logo(cx: float, cy: float, width: float, colour: str, stroke: floa
     return node
 
 
-_TOWEL_UPPER = (
-    "M2.5,-1.5 C4.0,-11.0 10.0,-20.0 20.0,-23.0 "
-    "C32.0,-26.5 45.0,-21.0 46.0,-10.5 "
-    "C46.8,-2.0 38.0,4.2 26.0,4.6 "
-    "C14.0,5.2 5.0,4.8 2.5,-1.5 Z"
+# The big towel butterfly. The silhouette is a single closed outline - broad
+# upper wings, round lower wings and a pinched waist - traced from the pack
+# photograph the brand supplied, then symmetrised and refitted to clean curves.
+# The two body spindles and the antennae are drawn over it.
+_TOWEL_SILHOUETTE = (
+    "M0,-4.3 C1.7,-4.9 3.1,-5.6 4.5,-5.6 C9.06,-16.42 17.63,-28.08 28.66,-32.8 "
+    "C30.27,-33.49 31.98,-34.21 33.71,-34.54 C38.94,-35.53 44.53,-33.72 45.44,-27.87 "
+    "C46.61,-20.37 41.71,-10.87 37.33,-5.04 C36.32,-3.69 32.05,0.24 31.96,0.51 "
+    "C31.79,1.01 32.72,1.68 32.99,1.95 C34.55,3.49 35.88,5.31 36.7,7.36 "
+    "C38.75,12.48 39,18.5 37.29,23.78 C36.58,25.97 35.61,28.1 34.12,29.88 "
+    "C33.02,31.21 31.63,32.29 30.11,33.1 C17.89,39.59 8.14,24.75 4.51,14.94 "
+    "C3.1,14.6 1.6,13.3 0,12.2 C-1.6,13.3 -3.1,14.6 -4.51,14.94 "
+    "C-8.14,24.75 -17.89,39.59 -30.11,33.1 C-31.63,32.29 -33.02,31.21 -34.12,29.88 "
+    "C-35.61,28.1 -36.58,25.97 -37.29,23.78 C-39,18.5 -38.75,12.48 -36.7,7.36 "
+    "C-35.88,5.31 -34.55,3.49 -32.99,1.95 C-32.72,1.68 -31.79,1.01 -31.96,0.51 "
+    "C-32.05,0.24 -36.32,-3.69 -37.33,-5.04 C-41.71,-10.87 -46.61,-20.37 -45.44,-27.87 "
+    "C-44.53,-33.72 -38.94,-35.53 -33.71,-34.54 C-31.98,-34.21 -30.27,-33.49 -28.66,-32.8 "
+    "C-17.63,-28.08 -9.06,-16.42 -4.5,-5.6 C-3.1,-5.6 -1.7,-4.9 0,-4.3 Z"
 )
-_TOWEL_LOWER = (
-    "M3.0,3.4 C11.0,2.2 23.0,4.6 29.5,10.4 "
-    "C36.5,17.2 33.0,27.4 22.5,27.8 "
-    "C12.0,28.2 4.4,18.0 3.0,3.4 Z"
-)
-_TOWEL_BODY_TOP = "M0,-6.2 C2.7,-3.2 2.7,0.6 0,3.2 C-2.7,0.6 -2.7,-3.2 0,-6.2 Z"
-_TOWEL_BODY_BOTTOM = "M0,4.2 C3.1,8.4 3.1,16.4 0,22.4 C-3.1,16.4 -3.1,8.4 0,4.2 Z"
+_TOWEL_THORAX = "M0,-10.9 C3.1,-8.6 3.3,-4.4 0,-1.4 C-3.3,-4.4 -3.1,-8.6 0,-10.9 Z"
+_TOWEL_ABDOMEN = "M0,9.4 C4.6,11.8 3.9,19 0,23.9 C-3.9,19 -4.6,11.8 0,9.4 Z"
 
 
 def _flatten(d: str, steps: int = 28) -> list[tuple[float, float]]:
@@ -189,7 +197,7 @@ def towel_butterfly(
     width: float,
     outline: str = theme.GOLD,
     fill: str = theme.TOWEL,
-    stroke: float = 1.35,
+    stroke: float = 1.9,
     uid: str = "towel",
 ) -> Node:
     """The folded towel, die-cut into a butterfly, as shown on the front."""
@@ -198,32 +206,27 @@ def towel_butterfly(
 
     wings = group(f"{uid}-wings", fill=fill, stroke=outline, stroke_width=stroke / scale,
                   stroke_linejoin="round")
-    polygons: list[list[tuple[float, float]]] = []
-    for sign in (1, -1):
-        transform = None if sign == 1 else "scale(-1 1)"
-        for d in (_TOWEL_UPPER, _TOWEL_LOWER):
-            wings.add(path(d, transform=transform) if transform else path(d))
-            polygons.append([(sign * px, py) for px, py in _flatten(d)])
+    wings.add(path(_TOWEL_SILHOUETTE))
+    polygon = _flatten(_TOWEL_SILHOUETTE)
 
-    # the woven look of the towel: horizontal ridges trimmed to each wing
+    # the woven look of the towel: horizontal ridges trimmed to the silhouette
     texture = group(f"{uid}-texture", opacity=0.5)
-    inset, spacing = 1.1, 2.1
-    y = -26.0
-    while y < 28.0:
-        for polygon in polygons:
-            for x1, x2 in _scanline(polygon, y):
-                if x2 - x1 > 2 * inset + 1.0:
-                    texture.add(
-                        line(
-                            x1 + inset,
-                            y,
-                            x2 - inset,
-                            y,
-                            stroke=theme.TOWEL_SHADE,
-                            stroke_width=0.44 / scale,
-                            stroke_linecap="round",
-                        )
+    inset, spacing = 1.4, 2.4
+    y = -34.0
+    while y < 34.0:
+        for x1, x2 in _scanline(polygon, y):
+            if x2 - x1 > 2 * inset + 1.0:
+                texture.add(
+                    line(
+                        x1 + inset,
+                        y,
+                        x2 - inset,
+                        y,
+                        stroke=theme.TOWEL_SHADE,
+                        stroke_width=0.5 / scale,
+                        stroke_linecap="round",
                     )
+                )
         y += spacing
 
     body = group(
@@ -233,22 +236,22 @@ def towel_butterfly(
         stroke_width=stroke / scale,
         stroke_linejoin="round",
     )
-    body.add(path(_TOWEL_BODY_TOP), path(_TOWEL_BODY_BOTTOM))
+    body.add(path(_TOWEL_THORAX), path(_TOWEL_ABDOMEN))
 
     antennae = group(
         f"{uid}-antennae",
         fill="none",
         stroke=outline,
-        stroke_width=(stroke * 0.62) / scale,
+        stroke_width=(stroke * 0.6) / scale,
         stroke_linecap="round",
     )
     for sign in (1, -1):
         antennae.add(
             path(
-                f"M0,-5.2 C{fmt(sign * 1.8)},-11.0 {fmt(sign * 4.2)},-16.0 "
-                f"{fmt(sign * 7.6)},-19.2"
+                f"M{fmt(sign * 1.3)},-10.8 C{fmt(sign * 1.9)},-14.6 "
+                f"{fmt(sign * 3.6)},-19.5 {fmt(sign * 6.6)},-23.5"
             ),
-            circle(sign * 8.6, -19.9, 1.5, fill=outline, stroke="none"),
+            circle(sign * 7.27, -24.4, 1.35, fill=outline, stroke="none"),
         )
 
     node.add(wings, texture, body, antennae)

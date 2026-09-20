@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="150mm" height="170mm" viewBox="0 0 150 170">
+  <title>Shaparak Pro - Navy - front panel</title>
+  <desc>Flow pack front panel, 150 x 170 mm, live text.</desc>
+  <g id="PANEL-FRONT-navy" data-name="PANEL-FRONT-navy">
+    <defs>
+      <linearGradient id="front-navy-l-sheen" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0%" stop-color="#000000" stop-opacity="0.10"/>
+        <stop offset="16%" stop-color="#FFFFFF" stop-opacity="0.18"/>
+        <stop offset="50%" stop-color="#FFFFFF" stop-opacity="0.02"/>
+        <stop offset="84%" stop-color="#FFFFFF" stop-opacity="0.16"/>
+        <stop offset="100%" stop-color="#000000" stop-opacity="0.12"/>
+      </linearGradient>
+      <linearGradient id="front-navy-l-seam" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0%" stop-color="#B9BCC0" stop-opacity="0.45"/>
+        <stop offset="35%" stop-color="#FFFFFF" stop-opacity="0.0"/>
+        <stop offset="65%" stop-color="#FFFFFF" stop-opacity="0.0"/>
+        <stop offset="100%" stop-color="#B9BCC0" stop-opacity="0.45"/>
+      </linearGradient>
+      <linearGradient id="front-navy-l-gold" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#D9B978"/>
+        <stop offset="45%" stop-color="#BE8C3C"/>
+        <stop offset="100%" stop-color="#9C6F27"/>
+      </linearGradient>
+    </defs>
+    <g id="01-BACKGROUND" data-name="01-BACKGROUND">
+      <rect x="0" y="0" width="150" height="170" fill="#FDFDFC"/>
+      <path d="M0,118.31 C26.25,111.8 56.25,111.59 75,115.58 C93.75,119.78 123.75,120.2 150,114.53 L150,170 L0,170 Z" fill="#1F2C50"/>
+      <path d="M0,117.76 C26.25,111.25 56.25,111.04 75,115.03 C93.75,119.23 123.75,119.65 150,113.98" fill="none" stroke="#BE8C3C" stroke-width="1" stroke-linecap="round"/>
+    </g>
+    <g id="02-TOP-SEAL" data-name="02-TOP-SEAL">
+      <rect x="0" y="0" width="150" height="16" fill="#1F2C50"/>
+      <g opacity="0.5" id="crimp-ribbing" data-name="crimp-ribbing">
+        <line x1="0" y1="0.95" x2="150" y2="0.95" stroke="#40507B" stroke-width="0.3"/>
+        <line x1="0" y1="1.9" x2="150" y2="1.9" stroke="#40507B" stroke-width="0.3"/>
+        <line x1="0" y1="2.85" x2="150" y2="2.85" stroke="#40507B" stroke-width="0.3"/>
+        <line x1="0" y1="3.8" x2="150" y2="3.8" stroke="#40507B" stroke-width="0.3"/>
+        <line x1="0" y1="4.75" x2="150" y2="4.75" stroke="#40507B" stroke-width="0.3"/>
+        <line x1="0" y1="5.7" x2="150" y2="5.7" stroke="#40507B" stroke-width="0.3"/>
+        <line x1="0" y1="6.65" x2="150" y2="6.65" stroke="#40507B" stroke-width="0.3"/>
+        <line x1="0" y1="7.6" x2="150" y2="7.6" stroke="#40507B" stroke-width="0.3"/>
+        <line x1="0" y1="8.55" x2="150" y2="8.55" stroke="#40507B" stroke-width="0.3"/>
+        <line x1="0" y1="9.5" x2="150" y2="9.5" stroke="#40507B" stroke-width="0.3"/>
+        <line x1="0" y1="10.45" x2="150" y2="10.45" stroke="#40507B" stroke-width="0.3"/>
+        <line x1="0" y1="11.4" x2="150" y2="11.4" stroke="#40507B" stroke-width="0.3"/>
+        <line x1="0" y1="12.35" x2="150" y2="12.35" stroke="#40507B" stroke-width="0.3"/>
+        <line x1="0" y1="13.3" x2="150" y2="13.3" stroke="#40507B" stroke-width="0.3"/>
+        <line x1="0" y1="14.25" x2="150" y2="14.25" stroke="#40507B" stroke-width="0.3"/>
+      </g>
+    </g>
+    <g id="03-BOTTOM-SEAL" data-name="03-BOTTOM-SEAL">
+      <g opacity="0.45" id="crimp-ribbing" data-name="crimp-ribbing">
+        <line x1="0" y1="164.95" x2="150" y2="164.95" stroke="#16203F" stroke-width="0.3"/>
+        <line x1="0" y1="165.9" x2="150" y2="165.9" stroke="#16203F" stroke-width="0.3"/>
+        <line x1="0" y1="166.85" x2="150" y2="166.85" stroke="#16203F" stroke-width="0.3"/>
+        <line x1="0" y1="167.8" x2="150" y2="167.8" stroke="#16203F" stroke-width="0.3"/>
+        <line x1="0" y1="168.75" x2="150" y2="168.75" stroke="#16203F" stroke-width="0.3"/>
+      </g>
+    </g>
+    <g id="04-HANG-SLOT" data-name="04-HANG-SLOT">
+      <g id="hang-slot" data-name="hang-slot">
+        <path d="M65.5,9.6 a1.4,1.4 0 0 1 1.4,-1.4 h3.6 a4.6,4.6 0 0 1 9.0,0 h3.6 a1.4,1.4 0 0 1 1.4,1.4 v1.9 a1.4,1.4 0 0 1 -1.4,1.4 h-16.2 a1.4,1.4 0 0 1 -1.4,-1.4 Z" fill="#FDFDFC"/>
+      </g>
+    </g>
+    <g id="05-VISCOSE-BADGE" data-name="05-VISCOSE-BADGE">
+      <circle cx="24.5" cy="36.5" r="11.2" fill="#22325A"/>
+      <g transform="translate(21.0000 28.7000) scale(0.291667)" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" id="icon-leaf" data-name="icon-leaf">
+        <path d="M20.4,3.8 C20.4,12.4 14.6,18.6 5.4,19.4 C3.8,11.2 9.6,4.2 20.4,3.8 Z"/>
+        <path d="M4.0,21.0 C6.6,16.0 10.8,11.4 16.4,8.2"/>
+      </g>
+      <text x="24.5" y="39.2" fill="#FFFFFF" font-family="Montserrat, sans-serif" font-size="4.4" font-weight="700" text-anchor="middle">100%</text>
+      <text x="24.5" y="43" fill="#FFFFFF" font-family="Montserrat, sans-serif" font-size="2.9" font-weight="500" letter-spacing="0.22" text-anchor="middle">VISCOSE</text>
+    </g>
+    <g id="06-LOGO-AND-TITLES" data-name="06-LOGO-AND-TITLES">
+      <g transform="translate(75 34.5) scale(0.3889)" fill="none" stroke="#BE8C3C" stroke-width="2.5714" stroke-linecap="round" stroke-linejoin="round" id="butterfly-logo" data-name="butterfly-logo">
+        <ellipse cx="0" cy="0" rx="16.2" ry="8.8" transform="translate(16.8 -8.6) rotate(-21)"/>
+        <ellipse cx="0" cy="0" rx="9.8" ry="5.8" transform="translate(10.6 6.4) rotate(30)"/>
+        <path d="M0,-6.8 C2.6,-11.4 5.6,-14.6 9.2,-16.4"/>
+        <circle cx="10.2" cy="-16.8" r="1.3" fill="#BE8C3C" stroke="none"/>
+        <ellipse cx="0" cy="0" rx="16.2" ry="8.8" transform="translate(-16.8 -8.6) rotate(21)"/>
+        <ellipse cx="0" cy="0" rx="9.8" ry="5.8" transform="translate(-10.6 6.4) rotate(-30)"/>
+        <path d="M0,-6.8 C-2.6,-11.4 -5.6,-14.6 -9.2,-16.4"/>
+        <circle cx="-10.2" cy="-16.8" r="1.3" fill="#BE8C3C" stroke="none"/>
+        <path d="M0,-8.0 C2.0,-4.8 2.3,0.2 1.0,5.4 C0.6,6.9 -0.6,6.9 -1.0,5.4 C-2.3,0.2 -2.0,-4.8 0,-8.0 Z" fill="#BE8C3C" stroke="none"/>
+      </g>
+      <text x="75" y="55.5" fill="#16203F" font-family="Montserrat, sans-serif" font-size="13.4" font-weight="700" letter-spacing="1.5" text-anchor="middle">SHAPARAK</text>
+      <g>
+        <text x="75" y="64.6" fill="#BE8C3C" font-family="Montserrat, sans-serif" font-size="7" font-weight="500" letter-spacing="2.2" text-anchor="middle">PRO</text>
+        <line x1="49" y1="62.22" x2="61.4235" y2="62.22" stroke="#BE8C3C" stroke-width="0.3" stroke-linecap="round"/>
+        <line x1="88.5765" y1="62.22" x2="101" y2="62.22" stroke="#BE8C3C" stroke-width="0.3" stroke-linecap="round"/>
+      </g>
+      <text x="75" y="73.1" fill="#16203F" font-family="Vazirmatn, sans-serif" font-size="6.4" font-weight="500" text-anchor="middle" direction="rtl" unicode-bidi="embed">حوله یکبار مصرف بهداشتی</text>
+      <text x="75" y="80.1" fill="#16203F" font-family="Montserrat, sans-serif" font-size="4.1" font-weight="500" letter-spacing="0.55" text-anchor="middle">PROFESSIONAL DISPOSABLE TOWEL</text>
+      <text x="75" y="86.9" fill="#16203F" font-family="Vazirmatn, sans-serif" font-size="4.8" font-weight="400" text-anchor="middle" direction="rtl" unicode-bidi="embed">منشفة للاستعمال الواحد</text>
+    </g>
+    <g id="07-TOWEL-BUTTERFLY" data-name="07-TOWEL-BUTTERFLY">
+      <g transform="translate(75 113.4) scale(0.6593)" id="towel-butterfly" data-name="towel-butterfly">
+        <g fill="#F7F7F5" stroke="#BE8C3C" stroke-width="2.8817" stroke-linejoin="round" id="front-navy-l-wings" data-name="front-navy-l-wings">
+          <path d="M0,-4.3 C1.7,-4.9 3.1,-5.6 4.5,-5.6 C9.06,-16.42 17.63,-28.08 28.66,-32.8 C30.27,-33.49 31.98,-34.21 33.71,-34.54 C38.94,-35.53 44.53,-33.72 45.44,-27.87 C46.61,-20.37 41.71,-10.87 37.33,-5.04 C36.32,-3.69 32.05,0.24 31.96,0.51 C31.79,1.01 32.72,1.68 32.99,1.95 C34.55,3.49 35.88,5.31 36.7,7.36 C38.75,12.48 39,18.5 37.29,23.78 C36.58,25.97 35.61,28.1 34.12,29.88 C33.02,31.21 31.63,32.29 30.11,33.1 C17.89,39.59 8.14,24.75 4.51,14.94 C3.1,14.6 1.6,13.3 0,12.2 C-1.6,13.3 -3.1,14.6 -4.51,14.94 C-8.14,24.75 -17.89,39.59 -30.11,33.1 C-31.63,32.29 -33.02,31.21 -34.12,29.88 C-35.61,28.1 -36.58,25.97 -37.29,23.78 C-39,18.5 -38.75,12.48 -36.7,7.36 C-35.88,5.31 -34.55,3.49 -32.99,1.95 C-32.72,1.68 -31.79,1.01 -31.96,0.51 C-32.05,0.24 -36.32,-3.69 -37.33,-5.04 C-41.71,-10.87 -46.61,-20.37 -45.44,-27.87 C-44.53,-33.72 -38.94,-35.53 -33.71,-34.54 C-31.98,-34.21 -30.27,-33.49 -28.66,-32.8 C-17.63,-28.08 -9.06,-16.42 -4.5,-5.6 C-3.1,-5.6 -1.7,-4.9 0,-4.3 Z"/>
+        </g>
+        <g opacity="0.5" id="front-navy-l-texture" data-name="front-navy-l-texture">
+          <line x1="-39.2819" y1="-34" x2="-33.0974" y2="-34" stroke="#E7E7E4" stroke-width="0.7583" stroke-linecap="round"/>
+          <line x1="33.0974" y1="-34" x2="39.2819" y2="-34" stroke="#E7E7E4" stroke-width="0.7583" stroke-linecap="round"/>
+          <line x1="-42.4935" y1="-31.6" x2="-27.5818" y2="-31.6" stroke="#E7E7E4" stroke-width="0.7583" stroke-linecap="round"/>
+          <line x1="27.5818" y1="-31.6" x2="42.4935" y2="-31.6" stroke="#E7E7E4" stroke-width="0.7583" stroke-linecap="round"/>
+          <line x1="-43.7295" y1="-29.2" x2="-23.7627" y2="-29.2" stroke="#E7E7E4" stroke-width="0.7583" stroke-linecap="round"/>
+          <line x1="23.7627" y1="-29.2" x2="43.7295" y2="-29.2" stroke="#E7E7E4" stroke-width="0.7583" stroke-linecap="round"/>
+          <line x1="-44.1606" y1="-26.8" x2="-20.7456" y2="-26.8" stroke="#E7E7E4" stroke-width="0.7583" stroke-linecap="round"/>
+          <line x1="20.7456" y1="-26.8" x2="44.1606" y2="-26.8" stroke="#E7E7E4" stroke-width="0.7583" stroke-linecap="round"/>
+          <line x1="-44.1776" y1="-24.4" x2="-18.2015" y2="-24.4" stroke="#E7E7E4" stroke-width="0.7583" stroke-linecap="round"/>
+          <line x1="18.2015" y1="-24.4" x2="44.1776" y2="-24.4" stroke="#E7E7E4" stroke-width="0.7583" stroke-linecap="round"/>
+          <line x1="-43.8889" y1="-22" x2="-15.9966" y2="-22" stroke="#E7E7E4" stroke-width="0.7583" stroke-linecap="round"/>
+          <line x1="15.9966" y1="-22" x2="43.8889" y2="-22" stroke="#E7E7E4" stroke-width="0.7583" stroke-linecap="round"/>
+          <line x1="-43.3439" y1="-19.6" x2="-14.0366" y2="-19.6" stroke="#E7E7E4" stroke-width="0.7583" stroke-linecap="round"/>
+          <line x1="14.0366" y1="-19.6" x2="43.3439" y2="-19.6" stroke="#E7E7E4" stroke-width="0.7583" stroke-linecap="round"/>
+          <line x1="-42.5846" y1="-17.2" x2="-12.278" y2="-17.2" stroke="#E7E7E4" stroke-width="0.7583" stroke-linecap="round"/>
+          <line x1="12.278" y1="-17.2" x2="42.5846" y2="-17.2" stroke="#E7E7E4" stroke-width="0.7583" stroke-linecap="round"/>
+          <line x1="-41.6339" y1="-14.8" x2="-10.6938" y2="-14.8" stroke="#E7E7E4" stroke-width="0.7583" stroke-linecap="round"/>
+          <line x1="10.6938" y1="-14.8" x2="41.6339" y2="-14.8" stroke="#E7E7E4" stroke-width="0.7583" stroke-linecap="round"/>
+          <line x1="-40.5048" y1="-12.4" x2="-9.2594" y2="-12.4" stroke="#E7E7E4" stroke-width="0.7583" stroke-linecap="round"/>
+          <line x1="9.2594" y1="-12.4" x2="40.5048" y2="-12.4" stroke="#E7E7E4" stroke-width="0.7583" stroke-linecap="round"/>
+          <line x1="-39.2024" y1="-10" x2="-7.9603" y2="-10" stroke="#E7E7E4" stroke-width="0.7583" stroke-linecap="round"/>
+          <line x1="7.9603" y1="-10" x2="39.2024" y2="-10" stroke="#E7E7E4" stroke-width="0.7583" stroke-linecap="round"/>
+          <line x1="-37.7227" y1="-7.6" x2="-6.7875" y2="-7.6" stroke="#E7E7E4" stroke-width="0.7583" stroke-linecap="round"/>
+          <line x1="6.7875" y1="-7.6" x2="37.7227" y2="-7.6" stroke="#E7E7E4" stroke-width="0.7583" stroke-linecap="round"/>
+          <line x1="-36.048" y1="-5.2" x2="-3.8377" y2="-5.2" stroke="#E7E7E4" stroke-width="0.7583" stroke-linecap="round"/>
+          <line x1="3.8377" y1="-5.2" x2="36.048" y2="-5.2" stroke="#E7E7E4" stroke-width="0.7583" stroke-linecap="round"/>
+          <line x1="-33.8487" y1="-2.8" x2="33.8487" y2="-2.8" stroke="#E7E7E4" stroke-width="0.7583" stroke-linecap="round"/>
+          <line x1="-31.4146" y1="-0.4" x2="31.4146" y2="-0.4" stroke="#E7E7E4" stroke-width="0.7583" stroke-linecap="round"/>
+          <line x1="-31.6401" y1="2" x2="31.6401" y2="2" stroke="#E7E7E4" stroke-width="0.7583" stroke-linecap="round"/>
+          <line x1="-33.6774" y1="4.4" x2="33.6774" y2="4.4" stroke="#E7E7E4" stroke-width="0.7583" stroke-linecap="round"/>
+          <line x1="-35.0604" y1="6.8" x2="35.0604" y2="6.8" stroke="#E7E7E4" stroke-width="0.7583" stroke-linecap="round"/>
+          <line x1="-35.9464" y1="9.2" x2="35.9464" y2="9.2" stroke="#E7E7E4" stroke-width="0.7583" stroke-linecap="round"/>
+          <line x1="-36.5478" y1="11.6" x2="36.5478" y2="11.6" stroke="#E7E7E4" stroke-width="0.7583" stroke-linecap="round"/>
+          <line x1="-36.9011" y1="14" x2="-3.946" y2="14" stroke="#E7E7E4" stroke-width="0.7583" stroke-linecap="round"/>
+          <line x1="3.946" y1="14" x2="36.9011" y2="14" stroke="#E7E7E4" stroke-width="0.7583" stroke-linecap="round"/>
+          <line x1="-37.0207" y1="16.4" x2="-6.4849" y2="16.4" stroke="#E7E7E4" stroke-width="0.7583" stroke-linecap="round"/>
+          <line x1="6.4849" y1="16.4" x2="37.0207" y2="16.4" stroke="#E7E7E4" stroke-width="0.7583" stroke-linecap="round"/>
+          <line x1="-36.9093" y1="18.8" x2="-7.5542" y2="18.8" stroke="#E7E7E4" stroke-width="0.7583" stroke-linecap="round"/>
+          <line x1="7.5542" y1="18.8" x2="36.9093" y2="18.8" stroke="#E7E7E4" stroke-width="0.7583" stroke-linecap="round"/>
+          <line x1="-36.5581" y1="21.2" x2="-8.788" y2="21.2" stroke="#E7E7E4" stroke-width="0.7583" stroke-linecap="round"/>
+          <line x1="8.788" y1="21.2" x2="36.5581" y2="21.2" stroke="#E7E7E4" stroke-width="0.7583" stroke-linecap="round"/>
+          <line x1="-35.9456" y1="23.6" x2="-10.2061" y2="23.6" stroke="#E7E7E4" stroke-width="0.7583" stroke-linecap="round"/>
+          <line x1="10.2061" y1="23.6" x2="35.9456" y2="23.6" stroke="#E7E7E4" stroke-width="0.7583" stroke-linecap="round"/>
+          <line x1="-35.057" y1="26" x2="-11.8486" y2="26" stroke="#E7E7E4" stroke-width="0.7583" stroke-linecap="round"/>
+          <line x1="11.8486" y1="26" x2="35.057" y2="26" stroke="#E7E7E4" stroke-width="0.7583" stroke-linecap="round"/>
+          <line x1="-33.7971" y1="28.4" x2="-13.8013" y2="28.4" stroke="#E7E7E4" stroke-width="0.7583" stroke-linecap="round"/>
+          <line x1="13.8013" y1="28.4" x2="33.7971" y2="28.4" stroke="#E7E7E4" stroke-width="0.7583" stroke-linecap="round"/>
+          <line x1="-31.8738" y1="30.8" x2="-16.2437" y2="30.8" stroke="#E7E7E4" stroke-width="0.7583" stroke-linecap="round"/>
+          <line x1="16.2437" y1="30.8" x2="31.8738" y2="30.8" stroke="#E7E7E4" stroke-width="0.7583" stroke-linecap="round"/>
+          <line x1="-28.4987" y1="33.2" x2="-19.7488" y2="33.2" stroke="#E7E7E4" stroke-width="0.7583" stroke-linecap="round"/>
+          <line x1="19.7488" y1="33.2" x2="28.4987" y2="33.2" stroke="#E7E7E4" stroke-width="0.7583" stroke-linecap="round"/>
+        </g>
+        <g fill="#F7F7F5" stroke="#BE8C3C" stroke-width="2.8817" stroke-linejoin="round" id="front-navy-l-body" data-name="front-navy-l-body">
+          <path d="M0,-10.9 C3.1,-8.6 3.3,-4.4 0,-1.4 C-3.3,-4.4 -3.1,-8.6 0,-10.9 Z"/>
+          <path d="M0,9.4 C4.6,11.8 3.9,19 0,23.9 C-3.9,19 -4.6,11.8 0,9.4 Z"/>
+        </g>
+        <g fill="none" stroke="#BE8C3C" stroke-width="1.729" stroke-linecap="round" id="front-navy-l-antennae" data-name="front-navy-l-antennae">
+          <path d="M1.3,-10.8 C1.9,-14.6 3.6,-19.5 6.6,-23.5"/>
+          <circle cx="7.27" cy="-24.4" r="1.35" fill="#BE8C3C" stroke="none"/>
+          <path d="M-1.3,-10.8 C-1.9,-14.6 -3.6,-19.5 -6.6,-23.5"/>
+          <circle cx="-7.27" cy="-24.4" r="1.35" fill="#BE8C3C" stroke="none"/>
+        </g>
+      </g>
+    </g>
+    <g id="08-EXTRA-SOFT-CLAIM" data-name="08-EXTRA-SOFT-CLAIM">
+      <g transform="translate(126.2000 93.3000) scale(0.358333)" fill="none" stroke="#16203F" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" id="icon-leaf" data-name="icon-leaf">
+        <path d="M20.4,3.8 C20.4,12.4 14.6,18.6 5.4,19.4 C3.8,11.2 9.6,4.2 20.4,3.8 Z"/>
+        <path d="M4.0,21.0 C6.6,16.0 10.8,11.4 16.4,8.2"/>
+      </g>
+      <text x="130.5" y="105.6" fill="#16203F" font-family="Montserrat, sans-serif" font-size="2.9" font-weight="600" letter-spacing="0.24" text-anchor="middle">EXTRA SOFT</text>
+      <text x="130.5" y="109.4" fill="#16203F" font-family="Montserrat, sans-serif" font-size="2.9" font-weight="600" letter-spacing="0.24" text-anchor="middle">NATURAL FIBER</text>
+    </g>
+    <g id="09-USAGE-STRIP" data-name="09-USAGE-STRIP">
+      <g transform="translate(13.2000 137.2000) scale(0.316667)" fill="none" stroke="#FFFFFF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="icon-scissors" data-name="icon-scissors">
+        <line x1="9.4" y1="18.4" x2="16.6" y2="4.2"/>
+        <line x1="14.6" y1="18.4" x2="7.4" y2="4.2"/>
+        <circle cx="8.6" cy="20" r="2.1"/>
+        <circle cx="15.4" cy="20" r="2.1"/>
+        <circle cx="12" cy="12.3" r="0.9" fill="#FFFFFF" stroke="none"/>
+      </g>
+      <text x="17" y="147.6" fill="#FFFFFF" font-family="Montserrat, sans-serif" font-size="2.227" font-weight="600" letter-spacing="0.1591" text-anchor="middle">BARBERSHOP</text>
+      <g transform="translate(32.5333 137.2000) scale(0.316667)" fill="none" stroke="#FFFFFF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="icon-salon" data-name="icon-salon">
+        <circle cx="12" cy="10.6" r="5.4"/>
+        <path d="M6.4,9.8 C6.4,5.2 8.8,2.8 12,2.8 C15.2,2.8 17.6,5.2 17.6,9.8"/>
+        <path d="M6.5,9.0 C5.3,12.8 5.0,17.4 5.6,20.8"/>
+        <path d="M17.5,9.0 C18.7,12.8 19.0,17.4 18.4,20.8"/>
+        <circle cx="10.2" cy="10.2" r="0.8" fill="#FFFFFF" stroke="none"/>
+        <circle cx="13.8" cy="10.2" r="0.8" fill="#FFFFFF" stroke="none"/>
+        <path d="M10.6,13.0 C11.4,13.8 12.6,13.8 13.4,13.0"/>
+      </g>
+      <text x="36.3333" y="147.6" fill="#FFFFFF" font-family="Montserrat, sans-serif" font-size="2.227" font-weight="600" letter-spacing="0.1591" text-anchor="middle">BEAUTY</text>
+      <text x="36.3333" y="150.9" fill="#FFFFFF" font-family="Montserrat, sans-serif" font-size="2.227" font-weight="600" letter-spacing="0.1591" text-anchor="middle">SALON</text>
+      <g transform="translate(51.8667 137.2000) scale(0.316667)" fill="none" stroke="#FFFFFF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="icon-paw" data-name="icon-paw">
+        <ellipse cx="7.3" cy="9.9" rx="2.3" ry="2.9" fill="#FFFFFF" stroke="none"/>
+        <ellipse cx="11.5" cy="7.6" rx="2.4" ry="3.1" fill="#FFFFFF" stroke="none"/>
+        <ellipse cx="15.9" cy="8.8" rx="2.3" ry="2.9" fill="#FFFFFF" stroke="none"/>
+        <ellipse cx="19.2" cy="12.6" rx="2" ry="2.5" fill="#FFFFFF" stroke="none"/>
+        <path d="M12.1,12.2 C15.0,12.2 17.6,14.5 17.6,17.1 C17.6,19.4 15.8,20.8 13.6,20.4 C12.6,20.2 11.6,20.2 10.6,20.4 C8.4,20.8 6.6,19.4 6.6,17.1 C6.6,14.5 9.2,12.2 12.1,12.2 Z" fill="#FFFFFF" stroke="none"/>
+      </g>
+      <text x="55.6667" y="147.6" fill="#FFFFFF" font-family="Montserrat, sans-serif" font-size="2.227" font-weight="600" letter-spacing="0.1591" text-anchor="middle">PET</text>
+      <text x="55.6667" y="150.9" fill="#FFFFFF" font-family="Montserrat, sans-serif" font-size="2.227" font-weight="600" letter-spacing="0.1591" text-anchor="middle">SHOP</text>
+      <g transform="translate(71.2000 137.2000) scale(0.316667)" fill="none" stroke="#FFFFFF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="icon-dumbbell" data-name="icon-dumbbell">
+        <line x1="8.4" y1="12" x2="15.6" y2="12"/>
+        <line x1="6.2" y1="8.6" x2="6.2" y2="15.4"/>
+        <line x1="17.8" y1="8.6" x2="17.8" y2="15.4"/>
+        <line x1="3.4" y1="10.1" x2="3.4" y2="13.9"/>
+        <line x1="20.6" y1="10.1" x2="20.6" y2="13.9"/>
+        <line x1="8.6" y1="9.6" x2="8.6" y2="14.4"/>
+        <line x1="15.4" y1="9.6" x2="15.4" y2="14.4"/>
+      </g>
+      <text x="75" y="147.6" fill="#FFFFFF" font-family="Montserrat, sans-serif" font-size="2.227" font-weight="600" letter-spacing="0.1591" text-anchor="middle">GYM</text>
+      <g transform="translate(90.5333 137.2000) scale(0.316667)" fill="none" stroke="#FFFFFF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="icon-pool" data-name="icon-pool">
+        <circle cx="9.6" cy="7.4" r="1.9" fill="#FFFFFF" stroke="none"/>
+        <path d="M12.4, 6.2 L17.6,9.0"/>
+        <path d="M3.4,12.4 C6.0,10.6 8.8,10.8 11.6,11.8 C14.2,12.7 16.6,12.6 18.8,11.2"/>
+        <path d="M2.2,16.4 C4.1,14.7 6.0,14.7 7.9,16.4 C9.8,18.1 11.7,18.1 13.6,16.4 C15.5,14.7 17.4,14.7 19.3,16.4 C20.2,17.2 21.0,17.5 21.8,17.4"/>
+        <path d="M2.2,20.2 C4.1,18.5 6.0,18.5 7.9,20.2 C9.8,21.9 11.7,21.9 13.6,20.2 C15.5,18.5 17.4,18.5 19.3,20.2 C20.2,21.0 21.0,21.3 21.8,21.2"/>
+      </g>
+      <text x="94.3333" y="147.6" fill="#FFFFFF" font-family="Montserrat, sans-serif" font-size="2.227" font-weight="600" letter-spacing="0.1591" text-anchor="middle">POOL</text>
+      <g transform="translate(109.8667 137.2000) scale(0.316667)" fill="none" stroke="#FFFFFF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="icon-hotel" data-name="icon-hotel">
+        <path d="M5.6,21.0 L5.6,5.2 C5.6,4.5 6.1,4.0 6.8,4.0 L14.2,4.0 C14.9,4.0 15.4,4.5 15.4,5.2 L15.4,21.0"/>
+        <path d="M15.4,21.0 L15.4,10.6 L18.6,10.6 C19.2,10.6 19.6,11.0 19.6,11.6 L19.6,21.0"/>
+        <line x1="3.6" y1="21" x2="21" y2="21"/>
+        <rect x="7.4" y="8.2" width="1.6" height="1.9" fill="#FFFFFF" stroke="none"/>
+        <rect x="10" y="8.2" width="1.6" height="1.9" fill="#FFFFFF" stroke="none"/>
+        <rect x="12.6" y="8.2" width="1.6" height="1.9" fill="#FFFFFF" stroke="none"/>
+        <rect x="7.4" y="11" width="1.6" height="1.9" fill="#FFFFFF" stroke="none"/>
+        <rect x="10" y="11" width="1.6" height="1.9" fill="#FFFFFF" stroke="none"/>
+        <rect x="12.6" y="11" width="1.6" height="1.9" fill="#FFFFFF" stroke="none"/>
+        <rect x="7.4" y="13.8" width="1.6" height="1.9" fill="#FFFFFF" stroke="none"/>
+        <rect x="10" y="13.8" width="1.6" height="1.9" fill="#FFFFFF" stroke="none"/>
+        <rect x="12.6" y="13.8" width="1.6" height="1.9" fill="#FFFFFF" stroke="none"/>
+        <rect x="16.6" y="13" width="1.5" height="1.8" fill="#FFFFFF" stroke="none"/>
+        <rect x="16.6" y="16.2" width="1.5" height="1.8" fill="#FFFFFF" stroke="none"/>
+        <path d="M10.0,21.0 L10.0,17.4 C10.0,16.8 10.5,16.3 11.1,16.3 C11.7,16.3 12.2,16.8 12.2,17.4 L12.2,21.0"/>
+      </g>
+      <text x="113.6667" y="147.6" fill="#FFFFFF" font-family="Montserrat, sans-serif" font-size="2.227" font-weight="600" letter-spacing="0.1591" text-anchor="middle">HOTEL</text>
+      <g transform="translate(129.2000 137.2000) scale(0.316667)" fill="none" stroke="#FFFFFF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" id="icon-plane" data-name="icon-plane">
+        <g transform="rotate(42 12 12)">
+          <path d="M12,2.2 C13.1,2.2 14,3.3 14,4.7 L14,9.4 L21.6,13.9 L21.6,16.1 L14,13.8 L14,18.3 L16.7,20.2 L16.7,21.8 L12,20.5 L7.3,21.8 L7.3,20.2 L10,18.3 L10,13.8 L2.4,16.1 L2.4,13.9 L10,9.4 L10,4.7 C10,3.3 10.9,2.2 12,2.2 Z" fill="#FFFFFF" stroke="none"/>
+        </g>
+      </g>
+      <text x="133" y="147.6" fill="#FFFFFF" font-family="Montserrat, sans-serif" font-size="2.227" font-weight="600" letter-spacing="0.1591" text-anchor="middle">TRAVEL</text>
+    </g>
+    <g id="10-SIZE-OPTIONS" data-name="10-SIZE-OPTIONS">
+      <rect x="20" y="153.6" width="110" height="10.2" rx="2.2" fill="none" stroke="#FFFFFF" stroke-width="0.32"/>
+      <rect x="62.1385" y="151.9" width="25.723" height="3.2" fill="#1F2C50"/>
+      <text x="75" y="154.8" fill="#FFFFFF" font-family="Vazirmatn, sans-serif" font-size="3.4" font-weight="500" text-anchor="middle" direction="rtl" unicode-bidi="embed">سایزهای موجود</text>
+      <rect x="41.7878" y="156.8" width="3.6" height="3.6" rx="0.576" fill="none" stroke="#FFFFFF" stroke-width="0.32"/>
+      <text x="72" y="159" fill="#FFFFFF" font-family="Vazirmatn, sans-serif" font-size="3.3" font-weight="500" text-anchor="end" direction="rtl" unicode-bidi="embed">۳۳ × ۶۰ سانتی‌متر</text>
+      <text x="72" y="162.6" fill="#FFFFFF" font-family="Vazirmatn, sans-serif" font-size="2.7" font-weight="400" text-anchor="end" direction="rtl" unicode-bidi="embed" opacity="0.9">سایز سالن</text>
+      <rect x="97.1365" y="156.8" width="3.6" height="3.6" rx="0.576" fill="none" stroke="#FFFFFF" stroke-width="0.32"/>
+      <text x="126" y="159" fill="#FFFFFF" font-family="Vazirmatn, sans-serif" font-size="3.3" font-weight="500" text-anchor="end" direction="rtl" unicode-bidi="embed">۶۰ × ۶۰ سانتی‌متر</text>
+      <text x="126" y="162.6" fill="#FFFFFF" font-family="Vazirmatn, sans-serif" font-size="2.7" font-weight="400" text-anchor="end" direction="rtl" unicode-bidi="embed" opacity="0.9">سایز پریمیوم</text>
+    </g>
+    <g style="display:none" id="ZZ-GUIDES-do-not-print" data-name="ZZ-GUIDES-do-not-print">
+      <rect x="0" y="0" width="150" height="170" fill="none" stroke="#FF00FF" stroke-width="0.25" stroke-dasharray="2 1.5"/>
+      <rect x="6" y="6" width="138" height="158" fill="none" stroke="#00A0FF" stroke-width="0.25" stroke-dasharray="2 1.5"/>
+      <rect x="-3" y="-3" width="156" height="176" fill="none" stroke="#FF7A00" stroke-width="0.25" stroke-dasharray="3 2"/>
+    </g>
+  </g>
+</svg>

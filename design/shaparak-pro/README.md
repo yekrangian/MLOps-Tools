@@ -1,16 +1,19 @@
 # Shaparak Pro – بسته‌بندی برداری / vector packaging artwork
 
-بازسازی برداری طرح بسته‌بندی «حوله یکبار مصرف بهداشتی Shaparak Pro» در دو نسخه‌ی
-فیروزه‌ای و سرمه‌ای، رو و پشت بسته. همه‌ی عناصر (پروانه، آیکون‌ها، بارکد، QR، متن‌ها)
+بازسازی برداری طرح بسته‌بندی «حوله یکبار مصرف بهداشتی Shaparak Pro» در نسخه‌ی
+سرمه‌ای، رو و پشت بسته. همه‌ی عناصر (پروانه، آیکون‌ها، بارکد، QR، متن‌ها)
 برداری هستند و در ایلاستریتور قابل ویرایش‌اند؛ هیچ تصویر رستری در فایل‌ها نیست.
+برچسب کنار هر آیکون فقط به انگلیسی است؛ عنوان فارسی محصول و کادر سایزها فارسی
+مانده‌اند.
 
-A vector rebuild of the Shaparak Pro disposable-towel pouch in the two requested
-colour ways, front and back. Everything – butterfly, icons, barcode, QR code and
-type – is vector and editable in Illustrator; no raster images are embedded.
+A vector rebuild of the Shaparak Pro disposable-towel pouch in the navy colour
+way, front and back. Everything – butterfly, icons, barcode, QR code and type – is
+vector and editable in Illustrator; no raster images are embedded. Every icon label
+on the pack is English-only; the Persian product title and size box remain.
 
-> **برای فرستادن به طراح:** فایل `shaparak-pro-artwork.zip` (حدود ۱۲ مگابایت) همه‌چیزِ
-> لازم را یکجا دارد – راهنمای فارسی، فهرست تصویری، ۹۳ آیتم جدا، پنل‌های کامل و
-> فونت‌ها. همین یک فایل را بفرستید. با `python pack.py` دوباره ساخته می‌شود.
+> **برای فرستادن به طراح:** فایل `shaparak-pro-artwork.zip` همه‌چیزِ لازم را یکجا
+> دارد – راهنمای فارسی، فهرست تصویری، ۶۷ آیتم جدا، پنل‌های کامل (رو و پشت سرمه‌ای)
+> و فونت‌ها. همین یک فایل را بفرستید. با `python pack.py` دوباره ساخته می‌شود.
 
 ---
 
@@ -18,15 +21,15 @@ type – is vector and editable in Illustrator; no raster images are embedded.
 
 | مسیر / path | چیست / what it is |
 | --- | --- |
-| `output/ai/*.ai` | **فایل لایه‌باز ایلاستریتور** – چهار پنل با لایه‌های نام‌دار (متن‌ها outline شده) |
+| `output/ai/*.ai` | **فایل لایه‌باز ایلاستریتور** – دو پنل سرمه‌ای با لایه‌های نام‌دار (متن‌ها outline شده) |
 | `output/eps/*.eps` | همان محتوا با هدر EPS؛ اگر ایلاستریتور شما `.ai` قدیمی را باز نکرد از این استفاده کنید |
 | `output/svg-outlined/*.svg` | همان طرح‌ها به صورت SVG، متن تبدیل به منحنی – مطمئن‌ترین گزینه برای چاپ |
 | `output/svg-live-text/*.svg` | نسخه‌ی متن زنده و قابل تایپ مجدد (نیاز به فونت‌های پوشه‌ی `fonts/`) |
 | `output/pdf/*.pdf` | خروجی PDF برای پیش‌نمایش و ارسال به چاپخانه |
 | `output/preview/*.png` | پیش‌نمایش PNG |
-| `output/shaparak-pro-presentation-sheet.svg` | شیت ارائه، مشابه چیدمان تصویر اولیه (۲ نسخه × رو و پشت) |
+| `output/shaparak-pro-presentation-sheet.svg` | شیت ارائه: پنل رو و پشت سرمه‌ای |
 | `output/shaparak-pro-logo.svg` | لوگوی پروانه + لوگوتایپ به صورت جدا |
-| `output/assets/` | **تک‌تک آیتم‌های روی بسته، جدا از هم** – ۹۳ آیتم در قالب SVG و AI و EPS |
+| `output/assets/` | **تک‌تک آیتم‌های روی بسته، جدا از هم** – ۶۷ آیتم در قالب SVG و AI و EPS |
 
 فایل‌های `.ai` با فرمت **Illustrator 8** نوشته شده‌اند؛ این تنها فرمت مستند AI است که
 رکورد لایه دارد، بنابراین وقتی فایل را در ایلاستریتور باز کنید پنل Layers با همان
@@ -63,14 +66,14 @@ three formats: `.svg`, layered `.ai` (Illustrator 8) and `.eps`.
 | پوشه | تعداد | چه چیزهایی |
 | --- | --- | --- |
 | `01-logo` | ۵ | نماد پروانه، لوگوی کامل، لوگو با شعار، لوگوتایپ SHAPARAK، نشان PRO |
-| `02-illustration` | ۷ | پروانه‌ی حوله، موج رنگی، نوار دوخت، نوار دوخت با جای آویز (هرکدام در دو رنگ) |
-| `03-front-blocks` | ۹ | مهر ۱۰۰٪ ویسکوز، نوار کاربردها، کادر سایزها، لوگو و عناوین پنل جلو، نشان EXTRA SOFT |
-| `04-back-blocks` | ۱۳ | لوگوی پشت، متن معرفی، فهرست ویژگی‌ها (فارسی/انگلیسی)، فهرست کاربردها، بلوک ویسکوز، ساخت ایران، بلوک شبکه‌های اجتماعی |
+| `02-illustration` | ۴ | پروانه‌ی حوله (silhouette جدید)، موج رنگی، نوار دوخت، نوار دوخت با جای آویز |
+| `03-front-blocks` | ۵ | مهر ۱۰۰٪ ویسکوز، نوار کاربردها، کادر سایزها، لوگو و عناوین پنل جلو، نشان EXTRA SOFT |
+| `04-back-blocks` | ۷ | لوگوی پشت، متن معرفی، فهرست FEATURES (انگلیسی)، فهرست کاربردها، بلوک ویسکوز، ساخت ایران، بلوک شبکه‌های اجتماعی |
 | `05-codes-and-marks` | ۶ | بارکد EAN‑13، کیوآرکد، نشان استاندارد ایران، ISO 9001، بازیافت و ردیف کامل نشان‌ها |
 | `06-icons` | ۱۶ | تمام آیکون‌ها، هرکدام روی بوم ۲۰×۲۰ میلی‌متر تا کنار هم هم‌اندازه بنشینند |
-| `07-type` | ۳۷ | عنوان‌های فارسی/عربی/انگلیسی، تیترها، برچسب هر کاربرد و هر ویژگی، آدرس سایت و اینستاگرام |
+| `07-type` | ۲۴ | عنوان‌های فارسی/عربی/انگلیسی، تیترها، برچسب انگلیسی هر کاربرد و هر ویژگی، آدرس سایت و اینستاگرام |
 
-* `output/assets/00-ALL-ITEMS.ai` (و `.eps` و `.svg` و `.pdf`) **همه‌ی ۹۳ آیتم در یک
+* `output/assets/00-ALL-ITEMS.ai` (و `.eps` و `.svg` و `.pdf`) **همه‌ی ۶۷ آیتم در یک
   فایل، با مقیاس واقعی ۱:۱ و هر آیتم روی لایه‌ی جداگانه**. اگر طراح فقط یک فایل
   می‌خواهد، همین را باز کند و هر چه لازم دارد را کپی کند. لایه‌ی
   `00-LABELS-delete-before-print` فقط نام فایل‌هاست؛ آن را پاک کنید.
@@ -80,8 +83,8 @@ three formats: `.svg`, layered `.ai` (Illustrator 8) and `.eps`.
 * آیتم‌هایی که روی زمینه‌ی رنگی سفید هستند (نوار کاربردها و کادر سایزها) یک لایه‌ی
   کمکی به نام `00-BACKDROP-reference` دارند تا دیده شوند؛ در ایلاستریتور آن لایه را
   پاک کنید و آرت سفید را روی زمینه‌ی خودتان بگذارید.
-* نام فایل‌هایی که به `-v1-turquoise` یا `-v2-navy` ختم می‌شوند یعنی همان آیتم با رنگ
-  آن نسخه؛ بقیه در هر دو نسخه یکسان‌اند.
+* فقط یک نسخه‌ی رنگی (سرمه‌ای) تولید می‌شود؛ نام فایل‌های پنل
+  `shaparak-pro-navy-front` و `shaparak-pro-navy-back` است.
 * آیکون‌ها با **خط (stroke)** کشیده شده‌اند، پس تغییر رنگشان در ایلاستریتور فقط عوض
   کردن رنگ خط است؛ برای تغییر ضخامت هم `Stroke` را تنظیم کنید (نسبت‌ها حفظ می‌شود).
 * همه‌ی متن‌های این پوشه outline شده‌اند تا روی هر سیستمی یکسان باشند. اگر متنِ
@@ -99,7 +102,7 @@ three formats: `.svg`, layered `.ai` (Illustrator 8) and `.eps`.
 04-HANG-SLOT           جای آویز (euro slot)
 05-VISCOSE-BADGE       نشان ۱۰۰٪ ویسکوز
 06-LOGO-AND-TITLES     پروانه، SHAPARAK، PRO و عناوین سه‌زبانه
-07-TOWEL-BUTTERFLY     حوله‌ی تاشده به شکل پروانه
+07-TOWEL-BUTTERFLY     حوله‌ی تاشده به شکل پروانه (silhouette جدید مطابق عکس مرجع)
 08-EXTRA-SOFT-CLAIM    ادعای EXTRA SOFT / NATURAL FIBER
 09-USAGE-STRIP         نوار کاربردها
 10-SIZE-OPTIONS        جدول سایزها
@@ -110,7 +113,7 @@ three formats: `.svg`, layered `.ai` (Illustrator 8) and `.eps`.
 ```
 01-BACKGROUND          زمینه و حاشیه‌ی رنگی
 02-TOP-SEAL            دوخت بالا
-03-BRAND-AND-FEATURES  لوگو، متن معرفی و فهرست ویژگی‌ها (انگلیسی و فارسی)
+03-BRAND-AND-FEATURES  لوگو، متن معرفی و فهرست FEATURES (انگلیسی)
 04-FOLLOW-US           QR، اینستاگرام و وب‌سایت
 05-SUITABLE-FOR        فهرست کاربردها و بخش ۱۰۰٪ ویسکوز
 06-CERTIFICATION-MARKS نشان استاندارد، ISO و بازیافت
@@ -130,8 +133,7 @@ three formats: `.svg`, layered `.ai` (Illustrator 8) and `.eps`.
 
 | نقش | HEX | معادل پیشنهادی چاپ |
 | --- | --- | --- |
-| فیروزه‌ای نسخه ۱ | `#5BB2AD` | C60 M8 Y33 K0 – نزدیک به Pantone 570 C |
-| سرمه‌ای نسخه ۲ | `#1F2C50` | C100 M85 Y35 K25 – نزدیک به Pantone 289 C |
+| سرمه‌ای | `#1F2C50` | C100 M85 Y35 K25 – نزدیک به Pantone 289 C |
 | طلایی | `#BE8C3C` | C25 M45 Y95 K5 – نزدیک به Pantone 4028 C |
 | مشکی متن | `#16203F` | C90 M75 Y40 K35 |
 
