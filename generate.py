@@ -7,8 +7,11 @@ Run ``python generate.py`` to write, into ``output/``:
   files to hand to the printer or to open in any Illustrator version
 * ``svg-live-text/`` the same four panels with editable ``<text>`` elements
 * ``pdf/``           Illustrator-compatible PDFs of the outlined panels
+* ``ai/`` and ``eps/`` layered Illustrator 8 files
 * ``preview/``       PNG previews plus a presentation sheet that mirrors the
   original two-version mock-up
+* ``assets/``        every item of the pack on its own artboard (logo, icons,
+  barcode, headlines...) as SVG, AI and EPS, with a contact sheet index
 """
 
 from __future__ import annotations
@@ -18,7 +21,7 @@ from pathlib import Path
 
 import cairosvg
 
-from utils import ai_export, panels, theme
+from utils import ai_export, assets, panels, theme
 from utils import artwork as art
 from utils import typography as tp
 from utils.svgdoc import Document, Node, el, group, rect
@@ -184,7 +187,93 @@ def build(png_dpi: int = 150) -> list[Path]:
     logo = OUTPUT / "shaparak-pro-logo.svg"
     write(logo_document(), logo, png_dpi=300, pdf=OUTPUT / "pdf" / "shaparak-pro-logo.pdf")
     written.append(logo)
+
+    written += asset_files()
     return written
+
+
+def asset_files(png_dpi: int = 200) -> list[Path]:
+    """Write every pack item on its own artboard, plus a contact sheet."""
+    root = OUTPUT / "assets"
+    written: list[Path] = []
+    thumbs: list[tuple[assets.Asset, Document, str]] = []
+
+    for asset in assets.catalogue():
+        doc, layers = assets.document(asset)
+        folder = root / asset.category
+        svg = folder / f"{asset.name}.svg"
+        svg.parent.mkdir(parents=True, exist_ok=True)
+        doc.save(svg)
+        written.append(svg)
+
+        title = f"Shaparak Pro - {asset.en}"
+        (folder / f"{asset.name}.ai").write_text(
+            ai_export.layered_ai(doc, layers, title), encoding="utf-8"
+        )
+        (folder / f"{asset.name}.eps").write_text(
+            ai_export.layered_ai(doc, layers, title, eps=True), encoding="utf-8"
+        )
+
+        png = root / "preview" / asset.category / f"{asset.name}.png"
+        png.parent.mkdir(parents=True, exist_ok=True)
+        cairosvg.svg2png(bytestring=svg.read_bytes(), write_to=str(png), dpi=png_dpi,
+                         background_color=None)
+        thumbs.append((asset, doc, f"{asset.category}/{asset.name}"))
+
+    index = root / "00-INDEX.svg"
+    index_document(thumbs).save(index)
+    svg_bytes = index.read_bytes()
+    cairosvg.svg2pdf(bytestring=svg_bytes, write_to=str(root / "00-INDEX.pdf"))
+    cairosvg.svg2png(bytestring=svg_bytes, write_to=str(root / "00-INDEX.png"), dpi=110,
+                     background_color="#FFFFFF")
+    written.append(index)
+    return written
+
+
+def index_document(thumbs: list[tuple[assets.Asset, Document, str]]) -> Document:
+    """A contact sheet: every item at a glance with the file name underneath."""
+    columns, cell_w, cell_h, art_h = 6, 46.0, 44.0, 26.0
+    margin, top = 12.0, 26.0
+    rows = -(-len(thumbs) // columns)
+    width = margin * 2 + columns * cell_w
+    height = top + rows * cell_h + margin
+
+    doc = Document(width, height, title="Shaparak Pro - asset index",
+                   desc="Every separated item of the pack with its file name.")
+    doc.add(rect(0, 0, width, height, fill="#FFFFFF"))
+    header = group("HEADER")
+    header.add(
+        tp.text("SHAPARAK PRO - ARTWORK ITEMS", margin, 13,
+                tp.Style(size=5.2, weight="bold", fill=theme.NAVY_TEXT, tracking=0.6)),
+        tp.text("هر آیتم به صورت جداگانه در فرمت SVG / AI / EPS", width - margin, 19,
+                tp.Style(size=3.4, script="persian", fill=theme.INK_SOFT, anchor="end")),
+    )
+    doc.add(header)
+
+    sheet = group("ITEMS")
+    label_style = tp.Style(size=1.85, weight="medium", fill=theme.INK_SOFT, anchor="middle")
+    for index, (asset, art_doc, relative) in enumerate(thumbs):
+        column, row = index % columns, index // columns
+        x = margin + column * cell_w
+        y = top + row * cell_h
+        cell = group(None)
+        cell.add(rect(x + 1.2, y, cell_w - 2.4, art_h + 3.4, rx=1.6, fill="#F4F5F7"))
+        scale = min((cell_w - 8) / art_doc.width, art_h / art_doc.height)
+        ox = x + cell_w / 2 - art_doc.width * scale / 2
+        oy = y + 1.7 + (art_h - art_doc.height * scale) / 2
+        art_group = group(None, transform=f"translate({ox:.3f} {oy:.3f}) scale({scale:.5f})")
+        art_group.add(*art_doc.root_children)
+        cell.add(art_group)
+        cell.add(
+            tp.text(relative, x + cell_w / 2, y + art_h + 7.4,
+                    tp.fit(relative, label_style, cell_w - 3)),
+            tp.text(asset.fa, x + cell_w / 2, y + art_h + 11.0,
+                    tp.fit(asset.fa, tp.Style(size=2.0, script="persian", fill=theme.INK_SOFT,
+                                              anchor="middle"), cell_w - 3)),
+        )
+        sheet.add(cell)
+    doc.add(sheet)
+    return doc
 
 
 def main() -> None:

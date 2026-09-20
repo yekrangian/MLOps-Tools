@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24.051mm" height="24.074mm" viewBox="0 0 24.051 24.074">
+  <title>Shaparak Pro - Recycling mark</title>
+  <desc>نشان بازیافت - 24.1 x 24.1 mm, text converted to curves.</desc>
+  <g transform="translate(-4.3892 -3.6942)" id="MARK-RECYCLE" data-name="MARK-RECYCLE">
+    <g id="mark" data-name="mark">
+      <g transform="translate(2.0000 2.0000) scale(1.083333)" fill="none" stroke="#1A1A1A" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" id="icon-recycle" data-name="icon-recycle">
+        <path d="M13.93,5.27 A7.0,7.0 0 0 1 18.93,11.03"/>
+        <path d="M18.79,13.69 L21.61,10.65 L16.26,11.40 Z" fill="#1A1A1A" stroke="none"/>
+        <path d="M16.86,17.04 A7.0,7.0 0 0 1 9.38,18.49"/>
+        <path d="M7.14,17.04 L8.37,20.99 L10.39,15.99 Z" fill="#1A1A1A" stroke="none"/>
+        <path d="M5.21,13.69 A7.0,7.0 0 0 1 7.69,6.48"/>
+        <path d="M10.07,5.27 L6.03,4.36 L9.35,8.61 Z" fill="#1A1A1A" stroke="none"/>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="20mm" height="20mm" viewBox="0 0 20 20">
+  <title>Shaparak Pro - scissors icon</title>
+  <desc>آیکن scissors - 20.0 x 20.0 mm, text converted to curves.</desc>
+  <g transform="translate(-0.0000 -0.7188)" id="ICON-SCISSORS" data-name="ICON-SCISSORS">
+    <g id="icon-scissors" data-name="icon-scissors">
+      <g transform="translate(2.5000 2.5000) scale(0.625000)" fill="none" stroke="#16203F" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round" id="icon-scissors" data-name="icon-scissors">
+        <line x1="9.4" y1="18.4" x2="16.6" y2="4.2"/>
+        <line x1="14.6" y1="18.4" x2="7.4" y2="4.2"/>
+        <circle cx="8.6" cy="20" r="2.1"/>
+        <circle cx="15.4" cy="20" r="2.1"/>
+        <circle cx="12" cy="12.3" r="0.9" fill="#16203F" stroke="none"/>
+      </g>
+    </g>
+  </g>
+</svg>

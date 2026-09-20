@@ -1,0 +1,105 @@
+%!PS-Adobe-3.0
+%%Creator: Adobe Illustrator(R) 8.0
+%%AI8_CreatorVersion: 8.0
+%%For: (Shaparak Pro) (shaparak-pro artwork generator)
+%%Title: (Shaparak Pro - cotton icon)
+%%CreationDate: 09/20/2026 19:19:21
+%%BoundingBox: 0 0 57 57
+%%HiResBoundingBox: 0 0 56.693 56.693
+%%DocumentProcessColors: Cyan Magenta Yellow Black
+%AI5_FileFormat 3
+%AI3_ColorUsage: Color
+%AI5_ArtSize: 56.693 56.693
+%AI5_RulerUnits: 1
+%AI9_ColorModel: 1
+%AI5_NumLayers: 1
+%AI5_OpenToView: 0 0 1 1600 1200 18 0 0 -2 96 0 0 0 1 1 0 1 1 0 1
+%%EndComments
+%%BeginProlog
+%%BeginResource: procset Shaparak_AI_compat 1.0 0
+/_fr 0 def /_fg 0 def /_fb 0 def
+/_sr 0 def /_sg 0 def /_sb 0 def
+/Xa { /_fb exch def /_fg exch def /_fr exch def } def
+/XA { /_sb exch def /_sg exch def /_sr exch def } def
+/m { moveto } def
+/l { lineto } def
+/L { lineto } def
+/c { curveto } def
+/C { curveto } def
+/v { currentpoint 6 2 roll curveto } def
+/V { currentpoint 6 2 roll curveto } def
+/y { 2 copy curveto } def
+/Y { 2 copy curveto } def
+/w { setlinewidth } def
+/J { setlinecap } def
+/j { setlinejoin } def
+/M { setmiterlimit } def
+/d { setdash } def
+/F { _fr _fg _fb setrgbcolor fill } def
+/f { closepath F } def
+/S { _sr _sg _sb setrgbcolor stroke } def
+/s { closepath S } def
+/B { gsave F grestore S } def
+/b { closepath B } def
+/N { } def
+/n { } def
+/*u { } def
+/*U { } def
+/u { } def
+/U { } def
+/A { pop } def
+/Lb { 10 { pop } repeat } def
+/Ln { pop } def
+/LB { } def
+/annotatepage { } def
+%%EndResource
+%%EndProlog
+%%BeginSetup
+%%EndSetup
+%AI5_BeginLayer
+1 1 1 1 0 0 4 0 0 0 Lb
+(ICON-COTTON) Ln
+0.086 0.125 0.247 XA
+2.746 w
+1 J
+1 j
+[] 0 d
+28.346 41.457 m
+24.095 41.457 21.26 38.268 21.26 34.37 C
+17.717 34.37 14.882 32.067 14.882 28.878 C
+14.882 25.512 18.071 23.386 21.614 23.386 C
+35.079 23.386 L
+38.622 23.386 41.811 25.512 41.811 28.878 C
+41.811 32.067 38.976 34.37 35.433 34.37 C
+35.433 38.268 32.598 41.457 28.346 41.457 C
+s
+0.086 0.125 0.247 XA
+2.746 w
+1 J
+1 j
+[] 0 d
+28.346 23.386 m
+28.346 15.236 L
+S
+0.086 0.125 0.247 XA
+2.746 w
+1 J
+1 j
+[] 0 d
+28.346 18.071 m
+25.866 18.071 23.386 19.488 21.969 21.968 C
+S
+0.086 0.125 0.247 XA
+2.746 w
+1 J
+1 j
+[] 0 d
+28.346 18.071 m
+30.827 18.071 33.307 19.488 34.724 21.968 C
+S
+LB
+%AI5_EndLayer--
+%%PageTrailer
+gsave annotatepage grestore showpage
+%%Trailer
+%%EOF

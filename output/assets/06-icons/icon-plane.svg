@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="20mm" height="20mm" viewBox="0 0 20 20">
+  <title>Shaparak Pro - plane icon</title>
+  <desc>آیکن plane - 20.0 x 20.0 mm, text converted to curves.</desc>
+  <g transform="translate(0.9140 -0.8469)" id="ICON-PLANE" data-name="ICON-PLANE">
+    <g id="icon-plane" data-name="icon-plane">
+      <g transform="translate(2.5000 2.5000) scale(0.625000)" fill="none" stroke="#16203F" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round" id="icon-plane" data-name="icon-plane">
+        <g transform="rotate(42 12 12)">
+          <path d="M12,2.2 C13.1,2.2 14,3.3 14,4.7 L14,9.4 L21.6,13.9 L21.6,16.1 L14,13.8 L14,18.3 L16.7,20.2 L16.7,21.8 L12,20.5 L7.3,21.8 L7.3,20.2 L10,18.3 L10,13.8 L2.4,16.1 L2.4,13.9 L10,9.4 L10,4.7 C10,3.3 10.9,2.2 12,2.2 Z" fill="#16203F" stroke="none"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="20mm" height="20mm" viewBox="0 0 20 20">
+  <title>Shaparak Pro - hotel icon</title>
+  <desc>آیکن hotel - 20.0 x 20.0 mm, text converted to curves.</desc>
+  <g transform="translate(-0.1875 -0.3125)" id="ICON-HOTEL" data-name="ICON-HOTEL">
+    <g id="icon-hotel" data-name="icon-hotel">
+      <g transform="translate(2.5000 2.5000) scale(0.625000)" fill="none" stroke="#16203F" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round" id="icon-hotel" data-name="icon-hotel">
+        <path d="M5.6,21.0 L5.6,5.2 C5.6,4.5 6.1,4.0 6.8,4.0 L14.2,4.0 C14.9,4.0 15.4,4.5 15.4,5.2 L15.4,21.0"/>
+        <path d="M15.4,21.0 L15.4,10.6 L18.6,10.6 C19.2,10.6 19.6,11.0 19.6,11.6 L19.6,21.0"/>
+        <line x1="3.6" y1="21" x2="21" y2="21"/>
+        <rect x="7.4" y="8.2" width="1.6" height="1.9" fill="#16203F" stroke="none"/>
+        <rect x="10" y="8.2" width="1.6" height="1.9" fill="#16203F" stroke="none"/>
+        <rect x="12.6" y="8.2" width="1.6" height="1.9" fill="#16203F" stroke="none"/>
+        <rect x="7.4" y="11" width="1.6" height="1.9" fill="#16203F" stroke="none"/>
+        <rect x="10" y="11" width="1.6" height="1.9" fill="#16203F" stroke="none"/>
+        <rect x="12.6" y="11" width="1.6" height="1.9" fill="#16203F" stroke="none"/>
+        <rect x="7.4" y="13.8" width="1.6" height="1.9" fill="#16203F" stroke="none"/>
+        <rect x="10" y="13.8" width="1.6" height="1.9" fill="#16203F" stroke="none"/>
+        <rect x="12.6" y="13.8" width="1.6" height="1.9" fill="#16203F" stroke="none"/>
+        <rect x="16.6" y="13" width="1.5" height="1.8" fill="#16203F" stroke="none"/>
+        <rect x="16.6" y="16.2" width="1.5" height="1.8" fill="#16203F" stroke="none"/>
+        <path d="M10.0,21.0 L10.0,17.4 C10.0,16.8 10.5,16.3 11.1,16.3 C11.7,16.3 12.2,16.8 12.2,17.4 L12.2,21.0"/>
+      </g>
+    </g>
+  </g>
+</svg>
